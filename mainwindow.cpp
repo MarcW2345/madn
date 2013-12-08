@@ -45,10 +45,10 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->startfeld43->setFeldtyp(4);
     ui->startfeld44->setFeldtyp(4);
 
-    feldl* felder[3];
-    felder[0]=ui->startposgrun;
-    felder[1]=ui->feld01;
-    felder[2]=ui->feld02;
+   // feldl* felder[3];
+   // felder[0]=ui->startposgrun;
+   // felder[1]=ui->feld01;
+   // felder[2]=ui->feld02;
 
 }
 
