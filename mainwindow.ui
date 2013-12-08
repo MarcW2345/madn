@@ -1,0 +1,1894 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>795</width>
+    <height>537</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Mensch ärgere dich nicht</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="7" column="7">
+       <widget class="QWidget" name="zielfeld44" native="true">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>5</width>
+          <height>5</height>
+         </size>
+        </property>
+        <property name="sizeIncrement">
+         <size>
+          <width>1</width>
+          <height>1</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">image: url(:/felder/grafiken/felder/kreisgelb.svg);</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="8">
+       <widget class="QWidget" name="feld12" native="true">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>5</width>
+          <height>5</height>
+         </size>
+        </property>
+        <property name="sizeIncrement">
+         <size>
+          <width>1</width>
+          <height>1</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">image: url(:/felder/grafiken/felder/kreisweiss.svg);</string>
+        </property>
+       </widget>
+      </item>
+      <item row="10" column="6">
+       <widget class="QWidget" name="feld28" native="true">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>5</width>
+          <height>5</height>
+         </size>
+        </property>
+        <property name="sizeIncrement">
+         <size>
+          <width>1</width>
+          <height>1</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">image: url(:/felder/grafiken/felder/kreisweiss.svg);</string>
+        </property>
+       </widget>
+      </item>
+      <item row="10" column="8">
+       <widget class="QWidget" name="feld25" native="true">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>5</width>
+          <height>5</height>
+         </size>
+        </property>
+        <property name="sizeIncrement">
+         <size>
+          <width>1</width>
+          <height>1</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">image: url(:/felder/grafiken/felder/kreisweiss.svg);</string>
+        </property>
+       </widget>
+      </item>
+      <item row="7" column="9">
+       <widget class="QWidget" name="feld21" native="true">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>5</width>
+          <height>5</height>
+         </size>
+        </property>
+        <property name="sizeIncrement">
+         <size>
+          <width>1</width>
+          <height>1</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">image: url(:/felder/grafiken/felder/kreisweiss.svg);</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="6">
+       <widget class="QWidget" name="feld5" native="true">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>5</width>
+          <height>5</height>
+         </size>
+        </property>
+        <property name="sizeIncrement">
+         <size>
+          <width>1</width>
+          <height>1</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">image: url(:/felder/grafiken/felder/kreisweiss.svg);</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="7">
+       <widget class="QWidget" name="zielfeld23" native="true">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>5</width>
+          <height>5</height>
+         </size>
+        </property>
+        <property name="sizeIncrement">
+         <size>
+          <width>1</width>
+          <height>1</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">image: url(:/felder/grafiken/felder/kreisrot.svg);</string>
+        </property>
+       </widget>
+      </item>
+      <item row="7" column="13">
+       <widget class="QWidget" name="startposition3" native="true">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>5</width>
+          <height>5</height>
+         </size>
+        </property>
+        <property name="sizeIncrement">
+         <size>
+          <width>1</width>
+          <height>1</height>
+         </size>
+        </property>
+        <property name="mouseTracking">
+         <bool>true</bool>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">image: url(:/felder/grafiken/felder/kreisblau.svg);</string>
+        </property>
+       </widget>
+      </item>
+      <item row="9" column="8">
+       <widget class="QWidget" name="feld24" native="true">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>5</width>
+          <height>5</height>
+         </size>
+        </property>
+        <property name="sizeIncrement">
+         <size>
+          <width>1</width>
+          <height>1</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">image: url(:/felder/grafiken/felder/kreisweiss.svg);</string>
+        </property>
+       </widget>
+      </item>
+      <item row="10" column="7">
+       <widget class="QWidget" name="zielfeld41" native="true">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>5</width>
+          <height>5</height>
+         </size>
+        </property>
+        <property name="sizeIncrement">
+         <size>
+          <width>1</width>
+          <height>1</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">image: url(:/felder/grafiken/felder/kreisgelb.svg);</string>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="9">
+       <widget class="QWidget" name="zielfeld33" native="true">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>5</width>
+          <height>5</height>
+         </size>
+        </property>
+        <property name="sizeIncrement">
+         <size>
+          <width>1</width>
+          <height>1</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">image: url(:/felder/grafiken/felder/kreisblau.svg);</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="5">
+       <widget class="QWidget" name="feld3" native="true">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>5</width>
+          <height>5</height>
+         </size>
+        </property>
+        <property name="sizeIncrement">
+         <size>
+          <width>1</width>
+          <height>1</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">image: url(:/felder/grafiken/felder/kreisweiss.svg);</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="6">
+       <widget class="QWidget" name="feld4" native="true">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>5</width>
+          <height>5</height>
+         </size>
+        </property>
+        <property name="sizeIncrement">
+         <size>
+          <width>1</width>
+          <height>1</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">image: url(:/felder/grafiken/felder/kreisweiss.svg);</string>
+        </property>
+       </widget>
+      </item>
+      <item row="7" column="8">
+       <widget class="QWidget" name="feld22" native="true">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>5</width>
+          <height>5</height>
+         </size>
+        </property>
+        <property name="sizeIncrement">
+         <size>
+          <width>1</width>
+          <height>1</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">image: url(:/felder/grafiken/felder/kreisweiss.svg);</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="7">
+       <widget class="QWidget" name="zielfeld22" native="true">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>5</width>
+          <height>5</height>
+         </size>
+        </property>
+        <property name="sizeIncrement">
+         <size>
+          <width>1</width>
+          <height>1</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">image: url(:/felder/grafiken/felder/kreisrot.svg);</string>
+        </property>
+       </widget>
+      </item>
+      <item row="7" column="11">
+       <widget class="QWidget" name="feld19" native="true">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>5</width>
+          <height>5</height>
+         </size>
+        </property>
+        <property name="sizeIncrement">
+         <size>
+          <width>1</width>
+          <height>1</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">image: url(:/felder/grafiken/felder/kreisweiss.svg);</string>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="8">
+       <widget class="QWidget" name="zielfeld34" native="true">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>5</width>
+          <height>5</height>
+         </size>
+        </property>
+        <property name="sizeIncrement">
+         <size>
+          <width>1</width>
+          <height>1</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">image: url(:/felder/grafiken/felder/kreisblau.svg);</string>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="5">
+       <widget class="QWidget" name="zielfeld13" native="true">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>5</width>
+          <height>5</height>
+         </size>
+        </property>
+        <property name="sizeIncrement">
+         <size>
+          <width>1</width>
+          <height>1</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">image: url(:/felder/grafiken/felder/kreisgrun.svg);</string>
+        </property>
+       </widget>
+      </item>
+      <item row="9" column="7">
+       <widget class="QWidget" name="zielfeld42" native="true">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>5</width>
+          <height>5</height>
+         </size>
+        </property>
+        <property name="sizeIncrement">
+         <size>
+          <width>1</width>
+          <height>1</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">image: url(:/felder/grafiken/felder/kreisgelb.svg);</string>
+        </property>
+       </widget>
+      </item>
+      <item row="8" column="8">
+       <widget class="QWidget" name="feld23" native="true">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>5</width>
+          <height>5</height>
+         </size>
+        </property>
+        <property name="sizeIncrement">
+         <size>
+          <width>1</width>
+          <height>1</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">image: url(:/felder/grafiken/felder/kreisweiss.svg);</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="11">
+       <widget class="QWidget" name="wurfel2" native="true">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>5</width>
+          <height>5</height>
+         </size>
+        </property>
+        <property name="sizeIncrement">
+         <size>
+          <width>1</width>
+          <height>1</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item row="8" column="7">
+       <widget class="QWidget" name="zielfeld43" native="true">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>5</width>
+          <height>5</height>
+         </size>
+        </property>
+        <property name="sizeIncrement">
+         <size>
+          <width>1</width>
+          <height>1</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">image: url(:/felder/grafiken/felder/kreisgelb.svg);</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="6">
+       <widget class="QWidget" name="feld6" native="true">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>5</width>
+          <height>5</height>
+         </size>
+        </property>
+        <property name="sizeIncrement">
+         <size>
+          <width>1</width>
+          <height>1</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">image: url(:/felder/grafiken/felder/kreisweiss.svg);</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="10">
+       <widget class="QWidget" name="feld15" native="true">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>5</width>
+          <height>5</height>
+         </size>
+        </property>
+        <property name="sizeIncrement">
+         <size>
+          <width>1</width>
+          <height>1</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">image: url(:/felder/grafiken/felder/kreisweiss.svg);</string>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="3">
+       <widget class="QWidget" name="zielfeld11" native="true">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>5</width>
+          <height>5</height>
+         </size>
+        </property>
+        <property name="sizeIncrement">
+         <size>
+          <width>1</width>
+          <height>1</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">image: url(:/felder/grafiken/felder/kreisgrun.svg);</string>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="10">
+       <widget class="QWidget" name="zielfeld32" native="true">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>5</width>
+          <height>5</height>
+         </size>
+        </property>
+        <property name="sizeIncrement">
+         <size>
+          <width>1</width>
+          <height>1</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">image: url(:/felder/grafiken/felder/kreisblau.svg);</string>
+        </property>
+       </widget>
+      </item>
+      <item row="7" column="3">
+       <widget class="QWidget" name="feld34" native="true">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>5</width>
+          <height>5</height>
+         </size>
+        </property>
+        <property name="sizeIncrement">
+         <size>
+          <width>1</width>
+          <height>1</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">image: url(:/felder/grafiken/felder/kreisweiss.svg);</string>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="11">
+       <widget class="QWidget" name="zielfeld31" native="true">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>5</width>
+          <height>5</height>
+         </size>
+        </property>
+        <property name="sizeIncrement">
+         <size>
+          <width>1</width>
+          <height>1</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">image: url(:/felder/grafiken/felder/kreisblau.svg);</string>
+        </property>
+       </widget>
+      </item>
+      <item row="8" column="6">
+       <widget class="QWidget" name="feld30" native="true">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>5</width>
+          <height>5</height>
+         </size>
+        </property>
+        <property name="sizeIncrement">
+         <size>
+          <width>1</width>
+          <height>1</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">image: url(:/felder/grafiken/felder/kreisweiss.svg);</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="9">
+       <widget class="QWidget" name="feld14" native="true">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>5</width>
+          <height>5</height>
+         </size>
+        </property>
+        <property name="sizeIncrement">
+         <size>
+          <width>1</width>
+          <height>1</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">image: url(:/felder/grafiken/felder/kreisweiss.svg);</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="6">
+       <widget class="QWidget" name="feld8" native="true">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>5</width>
+          <height>5</height>
+         </size>
+        </property>
+        <property name="sizeIncrement">
+         <size>
+          <width>1</width>
+          <height>1</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">image: url(:/felder/grafiken/felder/kreisweiss.svg);</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="8">
+       <widget class="QWidget" name="startposition2" native="true">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>5</width>
+          <height>5</height>
+         </size>
+        </property>
+        <property name="sizeIncrement">
+         <size>
+          <width>1</width>
+          <height>1</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">image: url(:/felder/grafiken/felder/kreisrot.svg);</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="7">
+       <widget class="QWidget" name="feld9" native="true">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>5</width>
+          <height>5</height>
+         </size>
+        </property>
+        <property name="sizeIncrement">
+         <size>
+          <width>1</width>
+          <height>1</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">image: url(:/felder/grafiken/felder/kreisweiss.svg);</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="7">
+       <widget class="QWidget" name="zielfeld21" native="true">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>5</width>
+          <height>5</height>
+         </size>
+        </property>
+        <property name="sizeIncrement">
+         <size>
+          <width>1</width>
+          <height>1</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">image: url(:/felder/grafiken/felder/kreisrot.svg);</string>
+        </property>
+       </widget>
+      </item>
+      <item row="7" column="6">
+       <widget class="QWidget" name="feld31" native="true">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>5</width>
+          <height>5</height>
+         </size>
+        </property>
+        <property name="sizeIncrement">
+         <size>
+          <width>1</width>
+          <height>1</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">image: url(:/felder/grafiken/felder/kreisweiss.svg);</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="13">
+       <widget class="QWidget" name="feld17" native="true">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>5</width>
+          <height>5</height>
+         </size>
+        </property>
+        <property name="sizeIncrement">
+         <size>
+          <width>1</width>
+          <height>1</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">image: url(:/felder/grafiken/felder/kreisweiss.svg);</string>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="13">
+       <widget class="QWidget" name="feld18" native="true">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>5</width>
+          <height>5</height>
+         </size>
+        </property>
+        <property name="sizeIncrement">
+         <size>
+          <width>1</width>
+          <height>1</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">image: url(:/felder/grafiken/felder/kreisweiss.svg);</string>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="6">
+       <widget class="QWidget" name="zielfeld14" native="true">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>5</width>
+          <height>5</height>
+         </size>
+        </property>
+        <property name="sizeIncrement">
+         <size>
+          <width>1</width>
+          <height>1</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">image: url(:/felder/grafiken/felder/kreisgrun.svg);</string>
+        </property>
+       </widget>
+      </item>
+      <item row="7" column="10">
+       <widget class="QWidget" name="feld20" native="true">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>5</width>
+          <height>5</height>
+         </size>
+        </property>
+        <property name="sizeIncrement">
+         <size>
+          <width>1</width>
+          <height>1</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">image: url(:/felder/grafiken/felder/kreisweiss.svg);</string>
+        </property>
+       </widget>
+      </item>
+      <item row="7" column="2">
+       <widget class="QWidget" name="feld35" native="true">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>5</width>
+          <height>5</height>
+         </size>
+        </property>
+        <property name="sizeIncrement">
+         <size>
+          <width>1</width>
+          <height>1</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">image: url(:/felder/grafiken/felder/kreisweiss.svg);</string>
+        </property>
+       </widget>
+      </item>
+      <item row="7" column="5">
+       <widget class="QWidget" name="feld32" native="true">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>5</width>
+          <height>5</height>
+         </size>
+        </property>
+        <property name="sizeIncrement">
+         <size>
+          <width>1</width>
+          <height>1</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">image: url(:/felder/grafiken/felder/kreisweiss.svg);</string>
+        </property>
+       </widget>
+      </item>
+      <item row="9" column="6">
+       <widget class="QWidget" name="feld29" native="true">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>5</width>
+          <height>5</height>
+         </size>
+        </property>
+        <property name="sizeIncrement">
+         <size>
+          <width>1</width>
+          <height>1</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">image: url(:/felder/grafiken/felder/kreisweiss.svg);</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="8">
+       <widget class="QWidget" name="feld13" native="true">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>5</width>
+          <height>5</height>
+         </size>
+        </property>
+        <property name="sizeIncrement">
+         <size>
+          <width>1</width>
+          <height>1</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">image: url(:/felder/grafiken/felder/kreisweiss.svg);</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="11">
+       <widget class="QWidget" name="feld16" native="true">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>5</width>
+          <height>5</height>
+         </size>
+        </property>
+        <property name="sizeIncrement">
+         <size>
+          <width>1</width>
+          <height>1</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">image: url(:/felder/grafiken/felder/kreisweiss.svg);</string>
+        </property>
+       </widget>
+      </item>
+      <item row="7" column="4">
+       <widget class="QWidget" name="feld33" native="true">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>5</width>
+          <height>5</height>
+         </size>
+        </property>
+        <property name="sizeIncrement">
+         <size>
+          <width>1</width>
+          <height>1</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">image: url(:/felder/grafiken/felder/kreisweiss.svg);</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="2">
+       <widget class="QWidget" name="wurfel1" native="true">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>5</width>
+          <height>5</height>
+         </size>
+        </property>
+        <property name="sizeIncrement">
+         <size>
+          <width>1</width>
+          <height>1</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="7">
+       <widget class="QWidget" name="zielfeld24" native="true">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>5</width>
+          <height>5</height>
+         </size>
+        </property>
+        <property name="sizeIncrement">
+         <size>
+          <width>1</width>
+          <height>1</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">image: url(:/felder/grafiken/felder/kreisrot.svg);</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="8">
+       <widget class="QWidget" name="feld10" native="true">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>5</width>
+          <height>5</height>
+         </size>
+        </property>
+        <property name="sizeIncrement">
+         <size>
+          <width>1</width>
+          <height>1</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">image: url(:/felder/grafiken/felder/kreisweiss.svg);</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="6">
+       <widget class="QWidget" name="feld7" native="true">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>5</width>
+          <height>5</height>
+         </size>
+        </property>
+        <property name="sizeIncrement">
+         <size>
+          <width>1</width>
+          <height>1</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">image: url(:/felder/grafiken/felder/kreisweiss.svg);</string>
+        </property>
+       </widget>
+      </item>
+      <item row="11" column="8">
+       <widget class="QWidget" name="feld26" native="true">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>5</width>
+          <height>5</height>
+         </size>
+        </property>
+        <property name="sizeIncrement">
+         <size>
+          <width>1</width>
+          <height>1</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">image: url(:/felder/grafiken/felder/kreisweiss.svg);</string>
+        </property>
+       </widget>
+      </item>
+      <item row="11" column="7">
+       <widget class="QWidget" name="feld27" native="true">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>5</width>
+          <height>5</height>
+         </size>
+        </property>
+        <property name="sizeIncrement">
+         <size>
+          <width>1</width>
+          <height>1</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">image: url(:/felder/grafiken/felder/kreisweiss.svg);</string>
+        </property>
+       </widget>
+      </item>
+      <item row="11" column="6">
+       <widget class="QWidget" name="startposition4" native="true">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>5</width>
+          <height>5</height>
+         </size>
+        </property>
+        <property name="sizeIncrement">
+         <size>
+          <width>1</width>
+          <height>1</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">image: url(:/felder/grafiken/felder/kreisgelb.svg);</string>
+        </property>
+       </widget>
+      </item>
+      <item row="11" column="3">
+       <widget class="QWidget" name="wurfel4" native="true">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>5</width>
+          <height>5</height>
+         </size>
+        </property>
+        <property name="sizeIncrement">
+         <size>
+          <width>1</width>
+          <height>1</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="2">
+       <widget class="QWidget" name="feld36" native="true">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>5</width>
+          <height>5</height>
+         </size>
+        </property>
+        <property name="sizeIncrement">
+         <size>
+          <width>1</width>
+          <height>1</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">image: url(:/felder/grafiken/felder/kreisweiss.svg);</string>
+        </property>
+       </widget>
+      </item>
+      <item row="10" column="13">
+       <widget class="QWidget" name="wurfel3" native="true">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>5</width>
+          <height>5</height>
+         </size>
+        </property>
+        <property name="sizeIncrement">
+         <size>
+          <width>1</width>
+          <height>1</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="8">
+       <widget class="QWidget" name="feld11" native="true">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>5</width>
+          <height>5</height>
+         </size>
+        </property>
+        <property name="sizeIncrement">
+         <size>
+          <width>1</width>
+          <height>1</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">image: url(:/felder/grafiken/felder/kreisweiss.svg);</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="14">
+       <widget class="feldl" name="startfeld23">
+        <property name="styleSheet">
+         <string notr="true">image: url(:/felder/grafiken/felder/rotaufrot.svg);</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="13">
+       <widget class="feldl" name="startfeld24">
+        <property name="styleSheet">
+         <string notr="true">image: url(:/felder/grafiken/felder/rotaufrot.svg);</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="13">
+       <widget class="feldl" name="startfeld21">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">image: url(:/felder/grafiken/felder/rotaufrot.svg);</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="14">
+       <widget class="feldl" name="startfeld22">
+        <property name="styleSheet">
+         <string notr="true">image: url(:/felder/grafiken/felder/rotaufrot.svg);</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="feldl" name="startfeld13">
+        <property name="styleSheet">
+         <string notr="true">image: url(:/felder/grafiken/felder/grunaufgrun.svg);</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="feldl" name="startfeld11">
+        <property name="styleSheet">
+         <string notr="true">image: url(:/felder/grafiken/felder/grunaufgrun.svg);</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="feldl" name="startfeld12">
+        <property name="styleSheet">
+         <string notr="true">image: url(:/felder/grafiken/felder/grunaufgrun.svg);</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="feldl" name="startfeld14">
+        <property name="styleSheet">
+         <string notr="true">image: url(:/felder/grafiken/felder/grunaufgrun.svg);</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item row="12" column="14">
+       <widget class="feldl" name="startfeld34">
+        <property name="styleSheet">
+         <string notr="true">image: url(:/felder/grafiken/felder/blauaufblau.svg);</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item row="12" column="13">
+       <widget class="feldl" name="startfeld33">
+        <property name="styleSheet">
+         <string notr="true">image: url(:/felder/grafiken/felder/blauaufblau.svg);</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item row="11" column="13">
+       <widget class="feldl" name="startfeld31">
+        <property name="styleSheet">
+         <string notr="true">image: url(:/felder/grafiken/felder/blauaufblau.svg);</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item row="11" column="14">
+       <widget class="feldl" name="startfeld32">
+        <property name="styleSheet">
+         <string notr="true">image: url(:/felder/grafiken/felder/blauaufblau.svg);</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item row="12" column="1">
+       <widget class="feldl" name="startfeld43">
+        <property name="styleSheet">
+         <string notr="true">image: url(:/felder/grafiken/felder/gelbaufgelb.svg);</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item row="12" column="0">
+       <widget class="feldl" name="startfeld44">
+        <property name="styleSheet">
+         <string notr="true">image: url(:/felder/grafiken/felder/gelbaufgelb.svg);</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item row="11" column="0">
+       <widget class="feldl" name="startfeld41">
+        <property name="styleSheet">
+         <string notr="true">image: url(:/felder/grafiken/felder/gelbaufgelb.svg);</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item row="11" column="1">
+       <widget class="feldl" name="startfeld42">
+        <property name="styleSheet">
+         <string notr="true">image: url(:/felder/grafiken/felder/gelbaufgelb.svg);</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="2">
+       <widget class="feldl" name="startposgrun">
+        <property name="styleSheet">
+         <string notr="true">image: url(:/felder/grafiken/felder/kreisgrun.svg);</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="4">
+       <widget class="QWidget" name="zielfeld12" native="true">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>5</width>
+          <height>5</height>
+         </size>
+        </property>
+        <property name="sizeIncrement">
+         <size>
+          <width>1</width>
+          <height>1</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">image: url(:/felder/grafiken/felder/kreisgrun.svg);</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="3">
+       <widget class="feldl" name="feld01">
+        <property name="styleSheet">
+         <string notr="true">image: url(:/felder/grafiken/felder/kreisweiss.svg);</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="4">
+       <widget class="feldl" name="feld02">
+        <property name="styleSheet">
+         <string notr="true">image: url(:/felder/grafiken/felder/kreisweiss.svg);</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout_3">
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_4">
+        <property name="spacing">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QLabel" name="label">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="font">
+           <font>
+            <family>Calibri</family>
+            <pointsize>16</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="layoutDirection">
+           <enum>Qt::LeftToRight</enum>
+          </property>
+          <property name="text">
+           <string>INFO</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="Line" name="line">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_3">
+        <item>
+         <spacer name="horizontalSpacer">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::Maximum</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="wurfel" name="hauptwurfel">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="pixmap">
+           <pixmap resource="ressourcen/wurfel.qrc">:/wurfel/grafiken/wurfel/wurfel6.svg</pixmap>
+          </property>
+          <property name="scaledContents">
+           <bool>true</bool>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer_2">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::Maximum</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QTextBrowser" name="textBrowser">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="html">
+         <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <item>
+         <widget class="QLineEdit" name="lineEdit">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton">
+          <property name="text">
+           <string>Nachricht senden</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>32</width>
+     <height>32</height>
+    </size>
+   </property>
+   <property name="toolButtonStyle">
+    <enum>Qt::ToolButtonTextUnderIcon</enum>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionSpiel_erstellen"/>
+   <addaction name="separator"/>
+   <addaction name="actionSpiel_beitreten"/>
+   <addaction name="separator"/>
+   <addaction name="actionOptionen"/>
+   <addaction name="separator"/>
+   <addaction name="actionBeenden"/>
+  </widget>
+  <action name="actionSpiel_beitreten">
+   <property name="icon">
+    <iconset resource="ressourcen/icons.qrc">
+     <normaloff>:/icons/grafiken/icons/beitreten.svg</normaloff>:/icons/grafiken/icons/beitreten.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Spiel beitreten</string>
+   </property>
+   <property name="toolTip">
+    <string>Einem Spiel beitreten</string>
+   </property>
+  </action>
+  <action name="actionBeenden">
+   <property name="icon">
+    <iconset resource="ressourcen/icons.qrc">
+     <normaloff>:/icons/grafiken/icons/beenden.svg</normaloff>:/icons/grafiken/icons/beenden.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Beenden</string>
+   </property>
+   <property name="toolTip">
+    <string>Beendet das Spiel</string>
+   </property>
+  </action>
+  <action name="actionSpiel_erstellen">
+   <property name="icon">
+    <iconset resource="ressourcen/icons.qrc">
+     <normaloff>:/icons/grafiken/icons/erstellen.svg</normaloff>:/icons/grafiken/icons/erstellen.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Spiel erstellen</string>
+   </property>
+   <property name="toolTip">
+    <string>Ein neues Spiel erstellen</string>
+   </property>
+  </action>
+  <action name="actionOptionen">
+   <property name="icon">
+    <iconset resource="ressourcen/icons.qrc">
+     <normaloff>:/icons/grafiken/icons/optionen.svg</normaloff>:/icons/grafiken/icons/optionen.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Optionen</string>
+   </property>
+   <property name="toolTip">
+    <string>Optionen</string>
+   </property>
+  </action>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>feldl</class>
+   <extends>QLabel</extends>
+   <header location="global">feld.h</header>
+  </customwidget>
+  <customwidget>
+   <class>wurfel</class>
+   <extends>QLabel</extends>
+   <header location="global">wurfel.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="ressourcen/icons.qrc"/>
+  <include location="ressourcen/wurfel.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>lineEdit</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>615</x>
+     <y>446</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>548</x>
+     <y>454</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>setChattext()</slot>
+ </slots>
+</ui>

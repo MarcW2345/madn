@@ -1,0 +1,29 @@
+<RCC>
+  <qresource prefix="felder">
+    <file>../grafiken/felder/blauaufblau.svg</file>
+    <file>../grafiken/felder/blauaufgelb.svg</file>
+    <file>../grafiken/felder/blauaufgrun.svg</file>
+    <file>../grafiken/felder/blauaufrot.svg</file>
+    <file>../grafiken/felder/blauaufweiss.svg</file>
+    <file>../grafiken/felder/gelbaufblau.svg</file>
+    <file>../grafiken/felder/gelbaufgelb.svg</file>
+    <file>../grafiken/felder/gelbaufgrun.svg</file>
+    <file>../grafiken/felder/gelbaufrot.svg</file>
+    <file>../grafiken/felder/gelbaufweiss.svg</file>
+    <file>../grafiken/felder/grunaufblau.svg</file>
+    <file>../grafiken/felder/grunaufgelb.svg</file>
+    <file>../grafiken/felder/grunaufgrun.svg</file>
+    <file>../grafiken/felder/grunaufrot.svg</file>
+    <file>../grafiken/felder/grunaufweiss.svg</file>
+    <file>../grafiken/felder/kreisblau.svg</file>
+    <file>../grafiken/felder/kreisgelb.svg</file>
+    <file>../grafiken/felder/kreisgrun.svg</file>
+    <file>../grafiken/felder/kreisrot.svg</file>
+    <file>../grafiken/felder/kreisweiss.svg</file>
+    <file>../grafiken/felder/rotaufblau.svg</file>
+    <file>../grafiken/felder/rotaufgelb.svg</file>
+    <file>../grafiken/felder/rotaufrot.svg</file>
+    <file>../grafiken/felder/rotaufweiss.svg</file>
+    <file>../grafiken/felder/rotaugrun.svg</file>
+  </qresource>
+</RCC>
