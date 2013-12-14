@@ -3,14 +3,15 @@
 
 #include <QLabel>
 
-class wurfel : public QLabel
+class Wurfel : public QLabel
 {
     Q_OBJECT
 private:
     int augen;
+    void setzeBild(int);
     int wurfeln();
 public:
-    explicit wurfel(QWidget *parent = 0);
+    explicit Wurfel(QWidget *parent = 0);
     int getAugen(){return augen;}
 
 public slots:

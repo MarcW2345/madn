@@ -1,0 +1,8 @@
+<RCC>
+  <qresource prefix="figuren">
+    <file>../grafiken/figuren/blau.svg</file>
+    <file>../grafiken/figuren/gelb.svg</file>
+    <file>../grafiken/figuren/grun.svg</file>
+    <file>../grafiken/figuren/rot.svg</file>
+  </qresource>
+</RCC>

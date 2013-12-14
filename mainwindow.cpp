@@ -7,7 +7,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    connect(ui->startfeld11, SIGNAL(mousePressed(int)), this, SLOT(mousePressed(int)));
+   /* connect(ui->startfeld11, SIGNAL(mousePressed(int)), this, SLOT(mousePressed(int)));
     connect(ui->startfeld11, SIGNAL(mousePressed(int)), ui->startfeld11, SLOT(change()));
     connect(ui->startfeld11, SIGNAL(mousePressed(int)), ui->startposgrun, SLOT(belegen()));
     connect(ui->startfeld12, SIGNAL(mousePressed(int)), this, SLOT(mousePressed(int)));
@@ -24,12 +24,11 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(ui->startfeld41, SIGNAL(mousePressed(int)), this, SLOT(mousePressed(int)));
     connect(ui->startfeld42, SIGNAL(mousePressed(int)), this, SLOT(mousePressed(int)));
     connect(ui->startfeld43, SIGNAL(mousePressed(int)), this, SLOT(mousePressed(int)));
-    connect(ui->startfeld44, SIGNAL(mousePressed(int)), this, SLOT(mousePressed(int)));
+    connect(ui->startfeld44, SIGNAL(mousePressed(int)), this, SLOT(mousePressed(int)));*/
 
     connect(ui->hauptwurfel, SIGNAL(wurfelPressed(int)), this, SLOT(wurfelPressed(int)));
 // Feldtyp setzen , welche Farbe
-    ui->startfeld11->setFeldtyp(1);
-    ui->startfeld12->setFeldtyp(1);
+    /*ui->startfeld11->setFeldtyp(1);
     ui->startfeld13->setFeldtyp(1);
     ui->startfeld14->setFeldtyp(1);
     ui->startfeld21->setFeldtyp(2);
@@ -43,7 +42,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->startfeld41->setFeldtyp(4);
     ui->startfeld42->setFeldtyp(4);
     ui->startfeld43->setFeldtyp(4);
-    ui->startfeld44->setFeldtyp(4);
+    ui->startfeld44->setFeldtyp(4);*/
 
    // feldl* felder[3];
    // felder[0]=ui->startposgrun;

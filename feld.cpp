@@ -1,22 +1,22 @@
 #include "feld.h"
 
- feldl::feldl(QWidget* parent) : QLabel(parent)
+ Feld::Feld(QWidget* parent) : QLabel(parent)
 {
 }
 
- void feldl::mousePressEvent(QMouseEvent *ev)
+ void Feld::mousePressEvent(QMouseEvent *ev)
  {
      emit mousePressed(feldtyp);
  }
 
- void feldl::change(){
+ void Feld::change(){
    this->setStyleSheet("image: url(:/felder/grafiken/felder/kreisgrun.svg);");
  }
 
- void feldl::belegen(){
+ void Feld::belegen(){
      //if(farbe==1)
          this->setStyleSheet("image: url(:/felder/grafiken/felder/grunaufgrun.svg);");
  }
 
- int feldl::getFeldtyp(){return feldtyp;}
- void feldl::setFeldtyp(int t){feldtyp=t;}
+ int Feld::getFeldtyp(){return feldtyp;}
+ void Feld::setFeldtyp(int t){feldtyp=t;}

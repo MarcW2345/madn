@@ -1,16 +1,16 @@
-#ifndef FELDL_H
-#define FELDL_H
+#ifndef FELD_H
+#define FELD_H
 
 #include <QLabel>
 
-class feldl : public QLabel
+class Feld : public QLabel
 {
          Q_OBJECT
 private:
     int feldtyp;
 
 public:
-    explicit feldl(QWidget *parent = 0);
+    explicit Feld(QWidget *parent = 0);
     void mousePressEvent(QMouseEvent *ev);
     int getFeldtyp();
     void setFeldtyp(int t);
