@@ -16,9 +16,9 @@
   <widget class="QWidget" name="centralwidget">
    <layout class="QHBoxLayout" name="horizontalLayout">
     <item>
-     <layout class="QGridLayout" name="gridLayout">
+     <layout class="QGridLayout" name="gridLayout" columnstretch="0,0,0,0,0,0,0,0,0,0,0,0,0,0" columnminimumwidth="0,0,0,0,0,0,0,0,0,0,0,0,0,0">
       <item row="5" column="11">
-       <widget class="QLabel" name="feld28">
+       <widget class="Spielfeld" name="feld28">
         <property name="styleSheet">
          <string notr="true">image: url(:/felder/grafiken/felder/kreisweiss.svg);</string>
         </property>
@@ -28,7 +28,7 @@
        </widget>
       </item>
       <item row="7" column="9">
-       <widget class="QLabel" name="feld34">
+       <widget class="Spielfeld" name="feld34">
         <property name="styleSheet">
          <string notr="true">image: url(:/felder/grafiken/felder/kreisweiss.svg);</string>
         </property>
@@ -38,7 +38,7 @@
        </widget>
       </item>
       <item row="7" column="10">
-       <widget class="QLabel" name="feld33">
+       <widget class="Spielfeld" name="feld33">
         <property name="styleSheet">
          <string notr="true">image: url(:/felder/grafiken/felder/kreisweiss.svg);</string>
         </property>
@@ -48,7 +48,7 @@
        </widget>
       </item>
       <item row="7" column="8">
-       <widget class="QLabel" name="feld35">
+       <widget class="Spielfeld" name="feld35">
         <property name="styleSheet">
          <string notr="true">image: url(:/felder/grafiken/felder/kreisweiss.svg);</string>
         </property>
@@ -58,7 +58,7 @@
        </widget>
       </item>
       <item row="11" column="8">
-       <widget class="QLabel" name="feld39">
+       <widget class="Spielfeld" name="feld39">
         <property name="styleSheet">
          <string notr="true">image: url(:/felder/grafiken/felder/kreisweiss.svg);</string>
         </property>
@@ -68,7 +68,7 @@
        </widget>
       </item>
       <item row="11" column="7">
-       <widget class="QLabel" name="feld40">
+       <widget class="Verzweigungsfeld" name="feld40">
         <property name="styleSheet">
          <string notr="true">image: url(:/felder/grafiken/felder/kreisweiss.svg);</string>
         </property>
@@ -78,7 +78,7 @@
        </widget>
       </item>
       <item row="1" column="7">
-       <widget class="QLabel" name="feld20">
+       <widget class="Verzweigungsfeld" name="feld20">
         <property name="styleSheet">
          <string notr="true">image: url(:/felder/grafiken/felder/kreisweiss.svg);</string>
         </property>
@@ -88,7 +88,7 @@
        </widget>
       </item>
       <item row="1" column="6">
-       <widget class="QLabel" name="feld19">
+       <widget class="Spielfeld" name="feld19">
         <property name="styleSheet">
          <string notr="true">image: url(:/felder/grafiken/felder/kreisweiss.svg);</string>
         </property>
@@ -98,7 +98,7 @@
        </widget>
       </item>
       <item row="3" column="6">
-       <widget class="QLabel" name="feld17">
+       <widget class="Spielfeld" name="feld17">
         <property name="styleSheet">
          <string notr="true">image: url(:/felder/grafiken/felder/kreisweiss.svg);</string>
         </property>
@@ -108,7 +108,7 @@
        </widget>
       </item>
       <item row="2" column="6">
-       <widget class="QLabel" name="feld18">
+       <widget class="Spielfeld" name="feld18">
         <property name="styleSheet">
          <string notr="true">image: url(:/felder/grafiken/felder/kreisweiss.svg);</string>
         </property>
@@ -118,7 +118,7 @@
        </widget>
       </item>
       <item row="4" column="6">
-       <widget class="QLabel" name="feld16">
+       <widget class="Spielfeld" name="feld16">
         <property name="styleSheet">
          <string notr="true">image: url(:/felder/grafiken/felder/kreisweiss.svg);</string>
         </property>
@@ -128,7 +128,7 @@
        </widget>
       </item>
       <item row="8" column="8">
-       <widget class="QLabel" name="feld36">
+       <widget class="Spielfeld" name="feld36">
         <property name="styleSheet">
          <string notr="true">image: url(:/felder/grafiken/felder/kreisweiss.svg);</string>
         </property>
@@ -138,7 +138,7 @@
        </widget>
       </item>
       <item row="9" column="8">
-       <widget class="QLabel" name="feld37">
+       <widget class="Spielfeld" name="feld37">
         <property name="styleSheet">
          <string notr="true">image: url(:/felder/grafiken/felder/kreisweiss.svg);</string>
         </property>
@@ -148,7 +148,7 @@
        </widget>
       </item>
       <item row="10" column="8">
-       <widget class="QLabel" name="feld38">
+       <widget class="Spielfeld" name="feld38">
         <property name="styleSheet">
          <string notr="true">image: url(:/felder/grafiken/felder/kreisweiss.svg);</string>
         </property>
@@ -158,7 +158,7 @@
        </widget>
       </item>
       <item row="2" column="8">
-       <widget class="QLabel" name="feld22">
+       <widget class="Spielfeld" name="feld22">
         <property name="styleSheet">
          <string notr="true">image: url(:/felder/grafiken/felder/kreisweiss.svg);</string>
         </property>
@@ -168,7 +168,7 @@
        </widget>
       </item>
       <item row="3" column="8">
-       <widget class="QLabel" name="feld23">
+       <widget class="Spielfeld" name="feld23">
         <property name="styleSheet">
          <string notr="true">image: url(:/felder/grafiken/felder/kreisweiss.svg);</string>
         </property>
@@ -178,7 +178,7 @@
        </widget>
       </item>
       <item row="7" column="11">
-       <widget class="QLabel" name="feld32">
+       <widget class="Spielfeld" name="feld32">
         <property name="styleSheet">
          <string notr="true">image: url(:/felder/grafiken/felder/kreisweiss.svg);</string>
         </property>
@@ -188,7 +188,7 @@
        </widget>
       </item>
       <item row="5" column="8">
-       <widget class="QLabel" name="feld25">
+       <widget class="Spielfeld" name="feld25">
         <property name="styleSheet">
          <string notr="true">image: url(:/felder/grafiken/felder/kreisweiss.svg);</string>
         </property>
@@ -198,7 +198,7 @@
        </widget>
       </item>
       <item row="4" column="8">
-       <widget class="QLabel" name="feld24">
+       <widget class="Spielfeld" name="feld24">
         <property name="styleSheet">
          <string notr="true">image: url(:/felder/grafiken/felder/kreisweiss.svg);</string>
         </property>
@@ -208,7 +208,7 @@
        </widget>
       </item>
       <item row="5" column="9">
-       <widget class="QLabel" name="feld26">
+       <widget class="Spielfeld" name="feld26">
         <property name="styleSheet">
          <string notr="true">image: url(:/felder/grafiken/felder/kreisweiss.svg);</string>
         </property>
@@ -218,7 +218,7 @@
        </widget>
       </item>
       <item row="5" column="10">
-       <widget class="QLabel" name="feld27">
+       <widget class="Spielfeld" name="feld27">
         <property name="styleSheet">
          <string notr="true">image: url(:/felder/grafiken/felder/kreisweiss.svg);</string>
         </property>
@@ -228,7 +228,7 @@
        </widget>
       </item>
       <item row="5" column="6">
-       <widget class="QLabel" name="feld15">
+       <widget class="Spielfeld" name="feld15">
         <property name="styleSheet">
          <string notr="true">image: url(:/felder/grafiken/felder/kreisweiss.svg);</string>
         </property>
@@ -238,7 +238,7 @@
        </widget>
       </item>
       <item row="5" column="3">
-       <widget class="QLabel" name="feld12">
+       <widget class="Spielfeld" name="feld12">
         <property name="styleSheet">
          <string notr="true">image: url(:/felder/grafiken/felder/kreisweiss.svg);</string>
         </property>
@@ -248,7 +248,7 @@
        </widget>
       </item>
       <item row="5" column="2">
-       <widget class="QLabel" name="startposgrun">
+       <widget class="Startposition" name="startposgrun">
         <property name="styleSheet">
          <string notr="true">image: url(:/felder/grafiken/felder/kreisgrun.svg);</string>
         </property>
@@ -258,7 +258,7 @@
        </widget>
       </item>
       <item row="5" column="4">
-       <widget class="QLabel" name="feld13">
+       <widget class="Spielfeld" name="feld13">
         <property name="styleSheet">
          <string notr="true">image: url(:/felder/grafiken/felder/kreisweiss.svg);</string>
         </property>
@@ -268,7 +268,7 @@
        </widget>
       </item>
       <item row="5" column="5">
-       <widget class="QLabel" name="feld14">
+       <widget class="Spielfeld" name="feld14">
         <property name="styleSheet">
          <string notr="true">image: url(:/felder/grafiken/felder/kreisweiss.svg);</string>
         </property>
@@ -278,7 +278,7 @@
        </widget>
       </item>
       <item row="5" column="12">
-       <widget class="QLabel" name="feld29">
+       <widget class="Spielfeld" name="feld29">
         <property name="styleSheet">
          <string notr="true">image: url(:/felder/grafiken/felder/kreisweiss.svg);</string>
         </property>
@@ -288,7 +288,7 @@
        </widget>
       </item>
       <item row="6" column="12">
-       <widget class="QLabel" name="feld30">
+       <widget class="Verzweigungsfeld" name="feld30">
         <property name="styleSheet">
          <string notr="true">image: url(:/felder/grafiken/felder/kreisweiss.svg);</string>
         </property>
@@ -467,7 +467,7 @@
        </widget>
       </item>
       <item row="10" column="6">
-       <widget class="QLabel" name="feld02">
+       <widget class="Spielfeld" name="feld02">
         <property name="styleSheet">
          <string notr="true">image: url(:/felder/grafiken/felder/kreisweiss.svg);</string>
         </property>
@@ -477,7 +477,7 @@
        </widget>
       </item>
       <item row="9" column="6">
-       <widget class="QLabel" name="feld03">
+       <widget class="Spielfeld" name="feld03">
         <property name="styleSheet">
          <string notr="true">image: url(:/felder/grafiken/felder/kreisweiss.svg);</string>
         </property>
@@ -487,7 +487,7 @@
        </widget>
       </item>
       <item row="8" column="6">
-       <widget class="QLabel" name="feld04">
+       <widget class="Spielfeld" name="feld04">
         <property name="styleSheet">
          <string notr="true">image: url(:/felder/grafiken/felder/kreisweiss.svg);</string>
         </property>
@@ -497,7 +497,7 @@
        </widget>
       </item>
       <item row="7" column="6">
-       <widget class="QLabel" name="feld05">
+       <widget class="Spielfeld" name="feld05">
         <property name="styleSheet">
          <string notr="true">image: url(:/felder/grafiken/felder/kreisweiss.svg);</string>
         </property>
@@ -507,7 +507,7 @@
        </widget>
       </item>
       <item row="6" column="2">
-       <widget class="QLabel" name="feld10">
+       <widget class="Verzweigungsfeld" name="feld10">
         <property name="styleSheet">
          <string notr="true">image: url(:/felder/grafiken/felder/kreisweiss.svg);</string>
         </property>
@@ -517,7 +517,7 @@
        </widget>
       </item>
       <item row="7" column="2">
-       <widget class="QLabel" name="feld09">
+       <widget class="Spielfeld" name="feld09">
         <property name="styleSheet">
          <string notr="true">image: url(:/felder/grafiken/felder/kreisweiss.svg);</string>
         </property>
@@ -527,7 +527,7 @@
        </widget>
       </item>
       <item row="7" column="3">
-       <widget class="QLabel" name="feld08">
+       <widget class="Spielfeld" name="feld08">
         <property name="styleSheet">
          <string notr="true">image: url(:/felder/grafiken/felder/kreisweiss.svg);</string>
         </property>
@@ -537,7 +537,7 @@
        </widget>
       </item>
       <item row="7" column="4">
-       <widget class="QLabel" name="feld07">
+       <widget class="Spielfeld" name="feld07">
         <property name="styleSheet">
          <string notr="true">image: url(:/felder/grafiken/felder/kreisweiss.svg);</string>
         </property>
@@ -547,7 +547,7 @@
        </widget>
       </item>
       <item row="7" column="5">
-       <widget class="QLabel" name="feld06">
+       <widget class="Spielfeld" name="feld06">
         <property name="styleSheet">
          <string notr="true">image: url(:/felder/grafiken/felder/kreisweiss.svg);</string>
         </property>
@@ -557,7 +557,7 @@
        </widget>
       </item>
       <item row="6" column="3">
-       <widget class="QLabel" name="zielfeldgrun1">
+       <widget class="Zielfeld" name="zielfeldgrun1">
         <property name="styleSheet">
          <string notr="true">image: url(:/felder/grafiken/felder/kreisgrun.svg);</string>
         </property>
@@ -567,7 +567,7 @@
        </widget>
       </item>
       <item row="6" column="4">
-       <widget class="QLabel" name="zielfeldgrun2">
+       <widget class="Zielfeld" name="zielfeldgrun2">
         <property name="styleSheet">
          <string notr="true">image: url(:/felder/grafiken/felder/kreisgrun.svg);</string>
         </property>
@@ -577,7 +577,7 @@
        </widget>
       </item>
       <item row="6" column="5">
-       <widget class="QLabel" name="zielfeldgrun3">
+       <widget class="Zielfeld" name="zielfeldgrun3">
         <property name="styleSheet">
          <string notr="true">image: url(:/felder/grafiken/felder/kreisgrun.svg);</string>
         </property>
@@ -587,7 +587,7 @@
        </widget>
       </item>
       <item row="6" column="6">
-       <widget class="QLabel" name="zielfeldgrun4">
+       <widget class="Zielfeld" name="zielfeldgrun4">
         <property name="styleSheet">
          <string notr="true">image: url(:/felder/grafiken/felder/kreisgrun.svg);</string>
         </property>
@@ -597,7 +597,7 @@
        </widget>
       </item>
       <item row="1" column="8">
-       <widget class="QLabel" name="startposrot">
+       <widget class="Startposition" name="startposrot">
         <property name="styleSheet">
          <string notr="true">image: url(:/felder/grafiken/felder/kreisrot.svg);</string>
         </property>
@@ -607,7 +607,7 @@
        </widget>
       </item>
       <item row="2" column="7">
-       <widget class="QLabel" name="zielfeldrot1">
+       <widget class="Zielfeld" name="zielfeldrot1">
         <property name="styleSheet">
          <string notr="true">image: url(:/felder/grafiken/felder/kreisrot.svg);</string>
         </property>
@@ -617,7 +617,7 @@
        </widget>
       </item>
       <item row="3" column="7">
-       <widget class="QLabel" name="zielfeldrot2">
+       <widget class="Zielfeld" name="zielfeldrot2">
         <property name="styleSheet">
          <string notr="true">image: url(:/felder/grafiken/felder/kreisrot.svg);</string>
         </property>
@@ -627,7 +627,7 @@
        </widget>
       </item>
       <item row="4" column="7">
-       <widget class="QLabel" name="zielfeldrot3">
+       <widget class="Zielfeld" name="zielfeldrot3">
         <property name="styleSheet">
          <string notr="true">image: url(:/felder/grafiken/felder/kreisrot.svg);</string>
         </property>
@@ -637,7 +637,7 @@
        </widget>
       </item>
       <item row="5" column="7">
-       <widget class="QLabel" name="zielfeldrot4">
+       <widget class="Zielfeld" name="zielfeldrot4">
         <property name="styleSheet">
          <string notr="true">image: url(:/felder/grafiken/felder/kreisrot.svg);</string>
         </property>
@@ -647,7 +647,7 @@
        </widget>
       </item>
       <item row="11" column="6">
-       <widget class="QLabel" name="startposgelb">
+       <widget class="Startposition" name="startposgelb">
         <property name="styleSheet">
          <string notr="true">image: url(:/felder/grafiken/felder/kreisgelb.svg);</string>
         </property>
@@ -657,7 +657,7 @@
        </widget>
       </item>
       <item row="10" column="7">
-       <widget class="QLabel" name="zielfeldgelb1">
+       <widget class="Zielfeld" name="zielfeldgelb1">
         <property name="styleSheet">
          <string notr="true">image: url(:/felder/grafiken/felder/kreisgelb.svg);</string>
         </property>
@@ -667,7 +667,7 @@
        </widget>
       </item>
       <item row="9" column="7">
-       <widget class="QLabel" name="zielfeldgelb2">
+       <widget class="Zielfeld" name="zielfeldgelb2">
         <property name="styleSheet">
          <string notr="true">image: url(:/felder/grafiken/felder/kreisgelb.svg);</string>
         </property>
@@ -677,7 +677,7 @@
        </widget>
       </item>
       <item row="8" column="7">
-       <widget class="QLabel" name="zielfeldgelb3">
+       <widget class="Zielfeld" name="zielfeldgelb3">
         <property name="styleSheet">
          <string notr="true">image: url(:/felder/grafiken/felder/kreisgelb.svg);</string>
         </property>
@@ -687,7 +687,7 @@
        </widget>
       </item>
       <item row="7" column="7">
-       <widget class="QLabel" name="zielfeldgelb4">
+       <widget class="Zielfeld" name="zielfeldgelb4">
         <property name="styleSheet">
          <string notr="true">image: url(:/felder/grafiken/felder/kreisgelb.svg);</string>
         </property>
@@ -697,7 +697,7 @@
        </widget>
       </item>
       <item row="7" column="12">
-       <widget class="QLabel" name="startposblau">
+       <widget class="Startposition" name="startposblau">
         <property name="styleSheet">
          <string notr="true">image: url(:/felder/grafiken/felder/kreisblau.svg);</string>
         </property>
@@ -707,7 +707,7 @@
        </widget>
       </item>
       <item row="6" column="11">
-       <widget class="QLabel" name="zielfeldblau1">
+       <widget class="Zielfeld" name="zielfeldblau1">
         <property name="styleSheet">
          <string notr="true">image: url(:/felder/grafiken/felder/kreisblau.svg);</string>
         </property>
@@ -717,7 +717,7 @@
        </widget>
       </item>
       <item row="6" column="10">
-       <widget class="QLabel" name="zielfeldblau2">
+       <widget class="Zielfeld" name="zielfeldblau2">
         <property name="styleSheet">
          <string notr="true">image: url(:/felder/grafiken/felder/kreisblau.svg);</string>
         </property>
@@ -727,7 +727,7 @@
        </widget>
       </item>
       <item row="6" column="9">
-       <widget class="QLabel" name="zielfeldblau3">
+       <widget class="Zielfeld" name="zielfeldblau3">
         <property name="styleSheet">
          <string notr="true">image: url(:/felder/grafiken/felder/kreisblau.svg);</string>
         </property>
@@ -737,7 +737,7 @@
        </widget>
       </item>
       <item row="6" column="8">
-       <widget class="QLabel" name="zielfeldblau4">
+       <widget class="Zielfeld" name="zielfeldblau4">
         <property name="styleSheet">
          <string notr="true">image: url(:/felder/grafiken/felder/kreisblau.svg);</string>
         </property>
@@ -973,6 +973,26 @@ p, li { white-space: pre-wrap; }
    <class>Wurfel</class>
    <extends>QLabel</extends>
    <header location="global">wurfel.h</header>
+  </customwidget>
+  <customwidget>
+   <class>Spielfeld</class>
+   <extends>QLabel</extends>
+   <header location="global">spielfeld.h</header>
+  </customwidget>
+  <customwidget>
+   <class>Startposition</class>
+   <extends>QLabel</extends>
+   <header location="global">startposition.h</header>
+  </customwidget>
+  <customwidget>
+   <class>Verzweigungsfeld</class>
+   <extends>QLabel</extends>
+   <header location="global">verzweigungsfeld.h</header>
+  </customwidget>
+  <customwidget>
+   <class>Zielfeld</class>
+   <extends>QLabel</extends>
+   <header location="global">zielfeld.h</header>
   </customwidget>
  </customwidgets>
  <resources>

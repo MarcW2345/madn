@@ -17,13 +17,21 @@ SOURCES += main.cpp\
     dialog.cpp \
     erstellen.cpp \
     feld.cpp \
-    wurfel.cpp
+    wurfel.cpp \
+    spielfeld.cpp \
+    startposition.cpp \
+    verzweigungsfeld.cpp \
+    zielfeld.cpp
 
 HEADERS  += mainwindow.h \
     dialog.h \
     erstellen.h \
     feld.h \
-    wurfel.h
+    wurfel.h \
+    spielfeld.h \
+    startposition.h \
+    verzweigungsfeld.h \
+    zielfeld.h
 
 FORMS    += mainwindow.ui \
     dialog.ui \
