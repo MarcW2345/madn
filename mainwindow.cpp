@@ -1,54 +1,25 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "dialog.h"
+#include "spielfeld.h"
+
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-   /* connect(ui->startfeld11, SIGNAL(mousePressed(int)), this, SLOT(mousePressed(int)));
-    connect(ui->startfeld11, SIGNAL(mousePressed(int)), ui->startfeld11, SLOT(change()));
-    connect(ui->startfeld11, SIGNAL(mousePressed(int)), ui->startposgrun, SLOT(belegen()));
-    connect(ui->startfeld12, SIGNAL(mousePressed(int)), this, SLOT(mousePressed(int)));
-    connect(ui->startfeld13, SIGNAL(mousePressed(int)), this, SLOT(mousePressed(int)));
-    connect(ui->startfeld14, SIGNAL(mousePressed(int)), this, SLOT(mousePressed(int)));
-    connect(ui->startfeld21, SIGNAL(mousePressed(int)), this, SLOT(mousePressed(int)));
-    connect(ui->startfeld22, SIGNAL(mousePressed(int)), this, SLOT(mousePressed(int)));
-    connect(ui->startfeld23, SIGNAL(mousePressed(int)), this, SLOT(mousePressed(int)));
-    connect(ui->startfeld24, SIGNAL(mousePressed(int)), this, SLOT(mousePressed(int)));
-    connect(ui->startfeld31, SIGNAL(mousePressed(int)), this, SLOT(mousePressed(int)));
-    connect(ui->startfeld32, SIGNAL(mousePressed(int)), this, SLOT(mousePressed(int)));
-    connect(ui->startfeld33, SIGNAL(mousePressed(int)), this, SLOT(mousePressed(int)));
-    connect(ui->startfeld34, SIGNAL(mousePressed(int)), this, SLOT(mousePressed(int)));
-    connect(ui->startfeld41, SIGNAL(mousePressed(int)), this, SLOT(mousePressed(int)));
-    connect(ui->startfeld42, SIGNAL(mousePressed(int)), this, SLOT(mousePressed(int)));
-    connect(ui->startfeld43, SIGNAL(mousePressed(int)), this, SLOT(mousePressed(int)));
-    connect(ui->startfeld44, SIGNAL(mousePressed(int)), this, SLOT(mousePressed(int)));*/
+    spielfelderInit();
+    zielfelderInit();
 
-    connect(ui->hauptwurfel, SIGNAL(wurfelPressed(int)), this, SLOT(wurfelPressed(int)));
-// Feldtyp setzen , welche Farbe
-    /*ui->startfeld11->setFeldtyp(1);
-    ui->startfeld13->setFeldtyp(1);
-    ui->startfeld14->setFeldtyp(1);
-    ui->startfeld21->setFeldtyp(2);
-    ui->startfeld22->setFeldtyp(2);
-    ui->startfeld23->setFeldtyp(2);
-    ui->startfeld24->setFeldtyp(2);
-    ui->startfeld31->setFeldtyp(3);
-    ui->startfeld32->setFeldtyp(3);
-    ui->startfeld33->setFeldtyp(3);
-    ui->startfeld34->setFeldtyp(3);
-    ui->startfeld41->setFeldtyp(4);
-    ui->startfeld42->setFeldtyp(4);
-    ui->startfeld43->setFeldtyp(4);
-    ui->startfeld44->setFeldtyp(4);*/
+    for(int i=1;i<41;i++){
+        if(i==10 || i==20 || i==30 || i==40)
+            connect(spielfeld[i], SIGNAL(verzweigungPressed(int,bool,Zustand)), this, SLOT(verzweigungsfeldPressed(int,bool,Zustand)));
+        else
+            connect(spielfeld[i], SIGNAL(mousePressed(int,Zustand)), this, SLOT(feldPressed(int,Zustand)));
 
-   // feldl* felder[3];
-   // felder[0]=ui->startposgrun;
-   // felder[1]=ui->feld01;
-   // felder[2]=ui->feld02;
-
+        }
+    // connect(ui->hauptwurfel, SIGNAL(wurfelPressed()), this, SLOT(wurfelPressed()));
 }
 
 MainWindow::~MainWindow()
@@ -78,12 +49,42 @@ void MainWindow::on_actionSpiel_erstellen_triggered()
     e->show();
 }
 
-void MainWindow::mousePressed(int i)
-{
-    ui->textBrowser->append(QString("Mouse pressed in Feldtyp %1").arg(i));
-}
-
 void MainWindow::wurfelPressed(int i)
 {
     ui->textBrowser->append(QString("wurfel %1").arg(i));
+}
+
+void MainWindow::feldPressed(int next,Zustand zustaende){
+    if(zustaende==nichtBelegt){
+        ui->textBrowser->append(QString("Hier ist garnichts drauf, mein Freund!!"));
+    }
+    else if(zustaende!=nichtBelegt && next==0){
+
+    }
+    else{
+    ui->textBrowser->append(QString("Naechstes Element: %1").arg(next));
+    spielfeld[next]->feldBelegen(zustaende);
+    }
+
+}
+
+void MainWindow::verzweigungsfeldPressed(int next,bool ziel, Zustand zustaende){
+    //ui->textBrowser->append(QString("Naechstes Element: %1").arg(next));
+    if(ziel)
+    {
+        if(zustaende==gelb)
+            zielfelderGelb[0]->feldBelegen(zustaende);
+        else if(zustaende==blau)
+            zielfelderBlau[0]->feldBelegen(zustaende);
+        else if(zustaende==rot)
+            zielfelderRot[0]->feldBelegen(zustaende);
+        else if(zustaende==grun)
+            zielfelderGrun[0]->feldBelegen(zustaende);
+         ui->textBrowser->append(QString("Im Ziel angekommen"));
+    }
+    else{
+    ui->textBrowser->append(QString("Naechstes Element: %1").arg(next));
+    spielfeld[next]->feldBelegen(zustaende);
+    }
+
 }

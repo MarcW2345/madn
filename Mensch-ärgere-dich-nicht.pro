@@ -21,7 +21,8 @@ SOURCES += main.cpp\
     spielfeld.cpp \
     startposition.cpp \
     verzweigungsfeld.cpp \
-    zielfeld.cpp
+    zielfeld.cpp \
+    spielbrett.cpp
 
 HEADERS  += mainwindow.h \
     dialog.h \
@@ -31,7 +32,8 @@ HEADERS  += mainwindow.h \
     spielfeld.h \
     startposition.h \
     verzweigungsfeld.h \
-    zielfeld.h
+    zielfeld.h \
+    zustand.h
 
 FORMS    += mainwindow.ui \
     dialog.ui \
@@ -40,4 +42,5 @@ FORMS    += mainwindow.ui \
 RESOURCES += \
     ressourcen/wurfel.qrc \
     ressourcen/icons.qrc \
-    ressourcen/felder.qrc
+    ressourcen/felder.qrc \
+    ressourcen/figuren.qrc

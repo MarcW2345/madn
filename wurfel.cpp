@@ -4,6 +4,7 @@
 #include <QCoreApplication>
 #include <QEventLoop>
 
+int augen_alt;
 Wurfel::Wurfel(QWidget *parent) :
     QLabel(parent)
 {
@@ -31,7 +32,10 @@ void Wurfel::setzeBild(int p)
 
 int Wurfel::wurfeln()
 {
-    augen=((rand()%6)+1) ;
+    augen=augen_alt;
+    while(augen==augen_alt)
+       augen=((rand()%6)+1) ;
+    augen_alt=augen;
     setzeBild(augen);
     return (augen);
 }
