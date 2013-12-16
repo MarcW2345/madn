@@ -1,0 +1,20 @@
+#ifndef SERVER_H
+#define SERVER_H
+
+#include <QTcpServer>
+#include <QTcpSocket>
+#include "Netzwerkverbindung.h"
+
+#define SPIELER_MAX 4
+#define CLIENTS_MAX (SPIELER_MAX - 1)
+
+class Server : public Netzwerkverbindung {
+    Q_OBJECT
+private:
+    QTcpServer server;
+    QTcpSocket clients[CLIENTS_MAX];
+public:
+    Server();
+};
+
+#endif // SERVER_H
