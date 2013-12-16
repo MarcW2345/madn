@@ -19,9 +19,10 @@ void delay(int n)
 
 void Wurfel::setzeBild(int p)
 {
+    this->setStyleSheet(QStringLiteral("image: url(:/wurfel/grafiken/wurfel/rot.svg);"));
     switch(p)
     {
-    case 1:this->setPixmap(QPixmap(QString::fromUtf8(":/wurfel/grafiken/wurfel/wurfel1.svg"))); break;
+    case 1:this->setPixmap(QPixmap(QString::fromUtf8(":/wurfel/grafiken/wurfel/wurfel1.svg")));break;
     case 2:this->setPixmap(QPixmap(QString::fromUtf8(":/wurfel/grafiken/wurfel/wurfel2.svg")));break;
     case 3:this->setPixmap(QPixmap(QString::fromUtf8(":/wurfel/grafiken/wurfel/wurfel3.svg")));break;
     case 4:this->setPixmap(QPixmap(QString::fromUtf8(":/wurfel/grafiken/wurfel/wurfel4.svg")));break;

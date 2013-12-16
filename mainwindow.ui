@@ -1642,6 +1642,8 @@ p, li { white-space: pre-wrap; }
  </customwidgets>
  <resources>
   <include location="ressourcen/icons.qrc"/>
+  <include location="ressourcen/figuren.qrc"/>
+  <include location="ressourcen/felder.qrc"/>
   <include location="ressourcen/wurfel.qrc"/>
  </resources>
  <connections>
