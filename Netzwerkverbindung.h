@@ -9,11 +9,11 @@ class Netzwerkverbindung : public QObject {
     Q_OBJECT
 public slots:
     sendeChat(QString nachricht) = 0;
-    sendeWürfeln(int augenzahl) = 0;
+    sendeWurfeln(int augenzahl) = 0;
     sendeZug(Zug zug) = 0;
 signals:
     chatEmpfangen(QString nachricht);
-    würfelnEmpfangen(int augenzahl);
+    wurfelnEmpfangen(int augenzahl);
     zugEmpfangen(Zug zug);
     spielerBeigetreten(QString name);
     spielerVerschwunden(QString name);
