@@ -5,6 +5,7 @@
 #-------------------------------------------------
 
 QT       += core gui
+CONFIG += c++11
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -22,7 +23,11 @@ SOURCES += main.cpp\
     startposition.cpp \
     verzweigungsfeld.cpp \
     zielfeld.cpp \
-    spielbrett.cpp
+    spielbrett.cpp \
+    startfeld.cpp \
+    spiel.cpp \
+    spieler.cpp \
+    timeout.cpp
 
 HEADERS  += mainwindow.h \
     dialog.h \
@@ -33,14 +38,18 @@ HEADERS  += mainwindow.h \
     startposition.h \
     verzweigungsfeld.h \
     zielfeld.h \
-    zustand.h
+    zustand.h \
+    startfeld.h \
+    spiel.h \
+    spieler.h \
+    timeout.h
 
 FORMS    += mainwindow.ui \
     dialog.ui \
     erstellen.ui
 
 RESOURCES += \
-    ressourcen/wurfel.qrc \
     ressourcen/icons.qrc \
     ressourcen/felder.qrc \
-    ressourcen/figuren.qrc
+    ressourcen/figuren.qrc \
+    ressourcen/wurfel.qrc

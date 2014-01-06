@@ -11,12 +11,12 @@ class erstellen : public QDialog
 {
     Q_OBJECT
 
+private:
+    Ui::erstellen *ui;
+
 public:
     explicit erstellen(QWidget *parent = 0);
     ~erstellen();
-
-private:
-    Ui::erstellen *ui;
 };
 
 #endif // ERSTELLEN_H

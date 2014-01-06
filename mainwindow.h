@@ -8,6 +8,10 @@
 #include "startfeld.h"
 #include "zielfeld.h"
 #include "zustand.h"
+#include "spiel.h"
+#include "spieler.h"
+#include "timeout.h"
+
 namespace Ui {
 class MainWindow;
 }
@@ -22,6 +26,11 @@ public:
     void spielfelderInit();
     void zielfelderInit();
     void startfelderInit();
+    void fressen(Zustand);
+    bool gueltigerZug(int,Zustand,int);
+    bool gueltigerZugZiel(int,Zustand,int);
+    bool startpositionGueltig(int);
+
 
 private slots:
     void on_actionBeenden_triggered();
@@ -31,21 +40,23 @@ private slots:
 public slots:
     void settext();
     void wurfelPressed(int);
-    void feldPressed(int,Zustand);
-    void verzweigungsfeldPressed(int,bool, Zustand);
+    void startfeldPressed(int,int,Zustand);
+    void feldPressed(int,int,Zustand);
+    void zielfeldPressed(int,int,Zustand);
+    void spiele(Zustand);
+    void zugPhase(int);
+    void anderTimer(int);
+
 private:
     Ui::MainWindow *ui;
     Dialog *d;
     erstellen *e;
     Spielfeld* spielfeld[45];
-    Startfeld* startfelderGelb[4];
-    Startfeld* startfelderGrun[4];
-    Startfeld* startfelderRot[4];
-    Startfeld* startfelderBlau[4];
-    Zielfeld* zielfelderGelb[4];
-    Zielfeld* zielfelderGrun[4];
-    Zielfeld* zielfelderRot[4];
-    Zielfeld* zielfelderBlau[4];
+    Startfeld* startfelder[16];
+    Zielfeld* zielfelder[16];
+    Spiel *madn=new Spiel();
+    Spieler* user[4]={new Spieler(),new Spieler(),new Spieler(),new Spieler()};
+    Timeout* timeout=new Timeout();
 
 };
 
