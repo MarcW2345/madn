@@ -40,9 +40,8 @@ MainWindow::MainWindow(QWidget *parent) :
     connect (ui->pushButton, SIGNAL(clicked()), madn, SLOT(starteSpiel()));
     connect (madn, SIGNAL(timerStart()),timeout, SLOT(starte()));
 
-
-    //connect (ui->pushButton, SIGNAL(clicked()), timeout, SLOT(starte()));
     connect (timeout, SIGNAL(sekundeVorbei(int)), this, SLOT(anderTimer(int)));
+
 }
 
 MainWindow::~MainWindow()
@@ -69,7 +68,9 @@ void MainWindow::on_actionSpiel_beitreten_triggered()
 
 void MainWindow::on_actionSpiel_erstellen_triggered()
 {
-    this->e=new erstellen(this);
+    this->e=new Erstellen(this);
+    connect(e, SIGNAL(spielparameter(int,int,int,bool)),
+            this, SLOT(empfangeSpielparamter(int,int,int,bool)));
     e->show();
 }
 void MainWindow::wurfelPressed(int i)
@@ -294,5 +295,16 @@ void MainWindow::zugPhase(int n)
 void MainWindow::anderTimer(int n)
 {
     ui->timer->display(n);
+}
+
+void MainWindow::empfangeSpielparamter(int timer, int anzSpieler,
+                                       int spielfiguren, bool lokalesSpiel)
+{
+    /*Spielparameter:
+     timer in sekunden
+     anzSpieler: 2,3 oder 4;
+     spielfiguren: 1=standardfiguren, 2=schneemann, 3=smiley
+     lokalesspiel: 0=nein, 1=ja
+    */
 }
 

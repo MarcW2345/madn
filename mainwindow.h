@@ -46,11 +46,12 @@ public slots:
     void spiele(Zustand);
     void zugPhase(int);
     void anderTimer(int);
+    void empfangeSpielparamter(int,int,int,bool);
 
 private:
     Ui::MainWindow *ui;
     Dialog *d;
-    erstellen *e;
+    Erstellen *e;
     Spielfeld* spielfeld[45];
     Startfeld* startfelder[16];
     Zielfeld* zielfelder[16];
