@@ -13,9 +13,11 @@ public:
     explicit Verzweigungsfeld(QWidget *parent = 0);
     void mousePressEvent(QMouseEvent *ev);
     void setFarbe(Zustand _farbe){farbe=_farbe;}
+    int getNext();
+    void setnextZielposition(int _nextZielposition){nextZielposition=_nextZielposition;}
+    int getnextZielposition(){return nextZielposition;}
 
 signals:
-    void verzweigungPressed(int,bool,Zustand);
 public slots:
 
 };

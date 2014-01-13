@@ -6,8 +6,15 @@ Verzweigungsfeld::Verzweigungsfeld(QWidget *parent) :
 }
 void Verzweigungsfeld::mousePressEvent(QMouseEvent *ev){
     if(farbe==zustaende)
-        emit verzweigungPressed(next,true,zustaende);
+        emit mousePressed(next,feldNr,zustaende);
     else
-        emit verzweigungPressed(next,false,zustaende);
-    freistellen();
+        emit mousePressed(next,feldNr,zustaende);
 }
+
+int Verzweigungsfeld::getNext(){
+    if(farbe==zustaende)
+        return 0;
+    else
+        return next;
+}
+
