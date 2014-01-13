@@ -19,8 +19,8 @@ class Netzwerkverbindung : public QObject {
     Q_OBJECT
 public slots:
     virtual void sendeChat(QString nachricht) = 0;
-    virtual void sendeWurfeln(int augenzahl) = 0;
-    virtual void sendeZug(quint8 zug) = 0;
+    virtual void sendeWurfeln(quint8 augenzahl) = 0;
+    virtual void sendeZug(int zug) = 0;
 signals:
     void chatEmpfangen(QString nachricht);
     void wurfelnEmpfangen(int augenzahl);

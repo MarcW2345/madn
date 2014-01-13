@@ -5,8 +5,8 @@
 #include <iostream>
 
 Server::Server(QObject *parent) {
-    server = new QTcpServer(parent);
-    server->listen();
+    server = new QTcpServer(this);
+    server->listen(QHostAddress::Any, 60123);
     connect(server, SIGNAL(newConnection()), this, SLOT(neueVerbindung()));
     for (int i = 0; i < CLIENTS_MAX; ++i) {
         clients[i] = 0;
@@ -31,6 +31,11 @@ void Server::nachrichtEmpfangen() {
     }
     while (client->canReadLine()) {
         QByteArray nachricht = client->readLine();
-
+        for (int i = 0; i < anzahlClients; ++i) {
+            if (clients[i] != client) {
+                clients[i]->write(nachricht);
+            }
+        }
+        emit chatEmpfangen(QString::fromUtf8(nachricht));
     }
 }

@@ -7,10 +7,15 @@
 class Client : public Netzwerkverbindung {
     Q_OBJECT
 private:
-    QTcpSocket socket;
+    QTcpSocket *socket;
+private slots:
+    void nachrichtEmpfangen();
 public:
     Client(QObject *parent);
     bool verbinden(QHostAddress adresse);
+    void sendeChat(QString nachricht);
+    void sendeWurfeln(quint8 augenzahl);
+    void sendeZug(int zug);
 signals:
     void verbindungVerloren();
 };

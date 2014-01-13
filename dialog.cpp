@@ -1,6 +1,11 @@
 #include "dialog.h"
 #include "ui_dialog.h"
 
+#include <QHostAddress>
+#include <iostream>
+
+#include "Client.h"
+
 Dialog::Dialog(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Dialog)
@@ -11,4 +16,21 @@ Dialog::Dialog(QWidget *parent) :
 Dialog::~Dialog()
 {
     delete ui;
+}
+
+void Dialog::on_pushButton_clicked()
+{
+    QString strAdresse = ui->lineEdit->text();
+    QHostAddress adresse;
+    bool gueltig = adresse.setAddress(strAdresse);
+    if (!gueltig) {
+        std::cerr << "Dialog::on_pushButton_clicked : ungueltige Adresse " << strAdresse.toStdString();
+        return;
+    }
+    Client *client = new Client(this->parent());
+    // <-- connect-Aufrufe mit dem Client einfügen
+    bool verbunden = client->verbinden(adresse);
+    if (!verbunden) {
+        delete client;
+    }
 }
