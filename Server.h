@@ -11,10 +11,14 @@
 class Server : public Netzwerkverbindung {
     Q_OBJECT
 private:
-    QTcpServer server;
-    QTcpSocket clients[CLIENTS_MAX];
+    QTcpServer *server;
+    QTcpSocket *clients[CLIENTS_MAX];
+    int anzahlClients;
+private slots:
+    void neueVerbindung();
+    void nachrichtEmpfangen();
 public:
-    Server();
+    Server(QObject *parent);
 };
 
 #endif // SERVER_H

@@ -2,7 +2,8 @@
 # Project created by QtCreator 2013-11-19T12:41:22
 # -------------------------------------------------
 QT += core \
-    gui
+    gui \
+    network
 greaterThan(QT_MAJOR_VERSION, 4):QT += widgets
 TARGET = test
 TEMPLATE = app
@@ -16,7 +17,8 @@ SOURCES += main.cpp \
     startposition.cpp \
     verzweigungsfeld.cpp \
     zielfeld.cpp \
-    spielbrett.cpp
+    spielbrett.cpp \
+    Server.cpp
 HEADERS += mainwindow.h \
     dialog.h \
     erstellen.h \

@@ -9,10 +9,10 @@ class Client : public Netzwerkverbindung {
 private:
     QTcpSocket socket;
 public:
-    Client();
+    Client(QObject *parent);
     bool verbinden(QHostAddress adresse);
 signals:
-    verbindungVerloren();
+    void verbindungVerloren();
 };
 
 #endif // CLIENT_H
