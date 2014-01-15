@@ -15,6 +15,7 @@ private:
     void timer();
 public:
     explicit Timeout(QObject *parent = 0);
+    void setSekunden(int _sekunden){ sekunden=_sekunden;}
 
 signals:
     void sekundeVorbei(int);

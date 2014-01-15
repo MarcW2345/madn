@@ -15,6 +15,7 @@ public:
    }
    int getSpielfeldNr(){return spielfeldNr;}
    virtual int getnextZielposition(){return 0;}
+   void feldUeberspringen(Zustand);
 
 signals:
 

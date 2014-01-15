@@ -27,7 +27,9 @@ SOURCES += main.cpp\
     startfeld.cpp \
     spiel.cpp \
     spieler.cpp \
-    timeout.cpp
+    timeout.cpp \
+    figurBewegen.cpp \
+    spielInit.cpp
 
 HEADERS  += mainwindow.h \
     dialog.h \

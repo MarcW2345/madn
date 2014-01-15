@@ -1415,7 +1415,7 @@
            </size>
           </property>
           <property name="text">
-           <string>TextLabel</string>
+           <string> Ip-Adresse</string>
           </property>
          </widget>
         </item>
@@ -1428,7 +1428,7 @@
            </size>
           </property>
           <property name="text">
-           <string>TextLabel</string>
+           <string>Spielzustand</string>
           </property>
          </widget>
         </item>
@@ -1473,11 +1473,23 @@
             <verstretch>0</verstretch>
            </sizepolicy>
           </property>
+          <property name="minimumSize">
+           <size>
+            <width>80</width>
+            <height>80</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>90</width>
+            <height>90</height>
+           </size>
+          </property>
           <property name="text">
            <string/>
           </property>
           <property name="pixmap">
-           <pixmap resource="ressourcen/wurfel.qrc">:/wurfel/grafiken/wurfel/wurfel6.svg</pixmap>
+           <pixmap resource="ressourcen/wurfel.qrc">:/wurfel/grafiken/wurfel/wurfel0.svg</pixmap>
           </property>
           <property name="scaledContents">
            <bool>true</bool>
@@ -1657,10 +1669,8 @@ p, li { white-space: pre-wrap; }
   </customwidget>
  </customwidgets>
  <resources>
-  <include location="ressourcen/wurfel.qrc"/>
-  <include location="ressourcen/felder.qrc"/>
-  <include location="ressourcen/figuren.qrc"/>
   <include location="ressourcen/icons.qrc"/>
+  <include location="ressourcen/wurfel.qrc"/>
  </resources>
  <connections>
   <connection>

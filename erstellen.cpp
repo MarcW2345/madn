@@ -59,8 +59,11 @@ void Erstellen::abbrechen(){
 
 void Erstellen::bestaetigen()
 {
-    emit spielparameter(timer,anzSpieler,spielfiguren,lokalesSpiel);
-    this->close();
+    if(lokalesSpiel==true){
+      emit spielparameter(timer,anzSpieler,spielfiguren,lokalesSpiel);
+      this->close();
+    }
+
 }
 
 Erstellen::~Erstellen()

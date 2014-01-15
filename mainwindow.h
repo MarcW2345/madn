@@ -26,11 +26,14 @@ public:
     void spielfelderInit();
     void zielfelderInit();
     void startfelderInit();
+    void figurenInit(int,int);
+    void spielInit(int,bool);
     void fressen(Zustand);
     bool gueltigerZug(int,Zustand,int);
     bool gueltigerZugZiel(int,Zustand,int);
+    bool gueltigerZugVorhanden(int,Zustand);
     bool startpositionGueltig(int);
-
+    void amZielAngelangt(Zustand);
 
 private slots:
     void on_actionBeenden_triggered();
@@ -58,6 +61,7 @@ private:
     Spiel *madn=new Spiel();
     Spieler* user[4]={new Spieler(),new Spieler(),new Spieler(),new Spieler()};
     Timeout* timeout=new Timeout();
+    bool lokal;
 
 };
 

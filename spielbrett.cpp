@@ -65,6 +65,37 @@ void MainWindow::spielfelderInit()
 
 
 }
+void MainWindow::figurenInit(int anzahl,int figurArt)
+{
+    for(int i=1;i<=40;i++)
+    {
+        spielfeld[i]->freistellen();
+        spielfeld[i]->setFigurArt(figurArt);
+    }
+    for(int i=0;i<16;i++)
+    {
+        startfelder[i]->freistellen();
+        startfelder[i]->setFigurArt(figurArt);
+    }
+    for(int i=0;i<16;i++)
+    {
+        zielfelder[i]->freistellen();
+        zielfelder[i]->setFigurArt(figurArt);
+    }
+    if(anzahl>=1)
+        for(int i=0;i<4;i++)
+            startfelder[i]->feldBelegen(gelb);
+    if(anzahl>=2)
+        for(int i=4;i<8;i++)
+            startfelder[i]->feldBelegen(grun);
+    if(anzahl>=3)
+        for(int i=8;i<12;i++)
+            startfelder[i]->feldBelegen(rot);
+    if(anzahl==4)
+        for(int i=12;i<16;i++)
+            startfelder[i]->feldBelegen(blau);
+
+}
 
 void MainWindow::zielfelderInit()
 {
@@ -127,23 +158,18 @@ void MainWindow::startfelderInit(){
     for(int i=0;i<4;i++){
         startfelder[i]->setfeldNr(i);
         startfelder[i]->setNext(1);
-        startfelder[i]->feldBelegen(gelb);
     }
     for(int i=4;i<8;i++){
         startfelder[i]->setfeldNr(i);
         startfelder[i]->setNext(11);
-        startfelder[i]->feldBelegen(grun);
     }
     for(int i=8;i<12;i++){
         startfelder[i]->setfeldNr(i);
         startfelder[i]->setNext(21);
-        startfelder[i]->feldBelegen(rot);
     }
     for(int i=12;i<16;i++){
         startfelder[i]->setfeldNr(i);
         startfelder[i]->setNext(31);
-        startfelder[i]->feldBelegen(blau);
     }
-
 }
 
