@@ -4,6 +4,7 @@
 #include "dialog.h"
 #include "erstellen.h"
 #include "feld.h"
+#include "Netzwerkverbindung.h"
 #include "spielfeld.h"
 #include "startfeld.h"
 #include "zielfeld.h"
@@ -33,6 +34,7 @@ public:
 
 
 private slots:
+    void on_pushButton_clicked();
     void on_actionBeenden_triggered();
     void on_actionSpiel_beitreten_triggered();
     void on_actionSpiel_erstellen_triggered();
@@ -47,6 +49,7 @@ public slots:
     void zugPhase(int);
     void anderTimer(int);
     void empfangeSpielparamter(int,int,int,bool);
+    void setzeNetzwerkverbindung(Netzwerkverbindung *verbindung);
 
 private:
     Ui::MainWindow *ui;
@@ -59,6 +62,8 @@ private:
     Spieler* user[4]={new Spieler(),new Spieler(),new Spieler(),new Spieler()};
     Timeout* timeout=new Timeout();
 
+signals:
+    void nachrichtZuSenden(QString nachricht);
 };
 
 #endif // MAINWINDOW_H

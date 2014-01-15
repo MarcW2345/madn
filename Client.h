@@ -13,6 +13,7 @@ private slots:
 public:
     Client(QObject *parent);
     bool verbinden(QHostAddress adresse);
+public slots:
     void sendeChat(QString nachricht);
     void sendeWurfeln(quint8 augenzahl);
     void sendeZug(int zug);

@@ -28,9 +28,11 @@ void Dialog::on_pushButton_clicked()
         return;
     }
     Client *client = new Client(this->parent());
-    // <-- connect-Aufrufe mit dem Client einfügen
     bool verbunden = client->verbinden(adresse);
     if (!verbunden) {
         delete client;
+        return;
     }
+    emit verbindungHergestellt(client);
+    this->close();
 }

@@ -3,6 +3,8 @@
 
 #include <QDialog>
 
+#include "Netzwerkverbindung.h"
+
 namespace Ui {
 class Dialog;
 }
@@ -20,6 +22,9 @@ private:
 
 private slots:
     void on_pushButton_clicked();
+
+signals:
+    void verbindungHergestellt(Netzwerkverbindung *verbindung);
 };
 
 #endif // DIALOG_H

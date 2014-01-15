@@ -1,5 +1,6 @@
 #include "erstellen.h"
 #include "ui_erstellen.h"
+#include "Server.h"
 
 Erstellen::Erstellen(QWidget *parent) :
     QDialog(parent),
@@ -60,6 +61,10 @@ void Erstellen::abbrechen(){
 void Erstellen::bestaetigen()
 {
     emit spielparameter(timer,anzSpieler,spielfiguren,lokalesSpiel);
+    if (!lokalesSpiel) {
+        Server *server = new Server(this->parent());
+        emit serverGestartet(server);
+    }
     this->close();
 }
 

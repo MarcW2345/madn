@@ -37,7 +37,6 @@ MainWindow::MainWindow(QWidget *parent) :
         connect (user[i], SIGNAL(spielerFertig()),timeout, SLOT(starte()));
     }
     connect (timeout, SIGNAL(zeitAbgelaufen()),madn, SLOT(naechster()));
-    connect (ui->pushButton, SIGNAL(clicked()), madn, SLOT(starteSpiel()));
     connect (madn, SIGNAL(timerStart()),timeout, SLOT(starte()));
 
     connect (timeout, SIGNAL(sekundeVorbei(int)), this, SLOT(anderTimer(int)));
@@ -62,7 +61,8 @@ void MainWindow::settext()
 
 void MainWindow::on_actionSpiel_beitreten_triggered()
 {
-    this->d=new Dialog(this);
+    this->d = new Dialog(this);
+    connect(d, SIGNAL(verbindungHergestellt(Netzwerkverbindung*)), this, SLOT(setzeNetzwerkverbindung(Netzwerkverbindung*)));
     d->show();
 }
 
@@ -71,6 +71,7 @@ void MainWindow::on_actionSpiel_erstellen_triggered()
     this->e=new Erstellen(this);
     connect(e, SIGNAL(spielparameter(int,int,int,bool)),
             this, SLOT(empfangeSpielparamter(int,int,int,bool)));
+    connect(e, SIGNAL(serverGestartet(Netzwerkverbindung*)), this, SLOT(setzeNetzwerkverbindung(Netzwerkverbindung*)));
     e->show();
 }
 void MainWindow::wurfelPressed(int i)
@@ -308,3 +309,15 @@ void MainWindow::empfangeSpielparamter(int timer, int anzSpieler,
     */
 }
 
+void MainWindow::setzeNetzwerkverbindung(Netzwerkverbindung *verbindung) {
+    connect(verbindung, SIGNAL(chatEmpfangen(QString)), ui->textBrowser, SLOT(append(QString)));
+    connect(this, SIGNAL(nachrichtZuSenden(QString)), verbindung, SLOT(sendeChat(QString)));
+}
+
+void MainWindow::on_pushButton_clicked()
+{
+    QString text = ui->lineEdit->text();
+    ui->lineEdit->clear();
+    ui->textBrowser->append(text);
+    emit nachrichtZuSenden(text);
+}

@@ -39,3 +39,18 @@ void Server::nachrichtEmpfangen() {
         emit chatEmpfangen(QString::fromUtf8(nachricht));
     }
 }
+
+void Server::sendeChat(QString nachricht) {
+    for (int i = 0; i < anzahlClients; ++i) {
+        clients[i]->write(nachricht.toUtf8());
+        clients[i]->write("\n");
+    }
+}
+
+void Server::sendeWurfeln(quint8 augenzahl) {
+
+}
+
+void Server::sendeZug(int zug) {
+
+}

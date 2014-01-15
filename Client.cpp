@@ -29,7 +29,8 @@ void Client::nachrichtEmpfangen() {
 }
 
 void Client::sendeChat(QString nachricht) {
-
+    socket->write(nachricht.toUtf8());
+    socket->write("\n");
 }
 
 void Client::sendeWurfeln(quint8 augenzahl) {

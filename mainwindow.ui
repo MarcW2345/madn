@@ -1477,7 +1477,7 @@
            <string/>
           </property>
           <property name="pixmap">
-           <pixmap resource="ressourcen/wurfel.qrc">:/wurfel/grafiken/wurfel/wurfel6.svg</pixmap>
+           <pixmap>:/wurfel/grafiken/wurfel/wurfel6.svg</pixmap>
           </property>
           <property name="scaledContents">
            <bool>true</bool>
@@ -1517,8 +1517,11 @@
          <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot; bgcolor=&quot;#e9e5b4&quot;&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;&quot; bgcolor=&quot;#e9e5b4&quot;&gt;
+&lt;table style=&quot;-qt-table-type: root; margin-top:4px; margin-bottom:4px; margin-left:4px; margin-right:4px;&quot;&gt;
+&lt;tr&gt;
+&lt;td style=&quot;border: none;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:8pt;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
        </widget>
       </item>
@@ -1577,7 +1580,7 @@ p, li { white-space: pre-wrap; }
   </widget>
   <action name="actionSpiel_beitreten">
    <property name="icon">
-    <iconset resource="ressourcen/icons.qrc">
+    <iconset>
      <normaloff>:/icons/grafiken/icons/beitreten.svg</normaloff>:/icons/grafiken/icons/beitreten.svg</iconset>
    </property>
    <property name="text">
@@ -1589,7 +1592,7 @@ p, li { white-space: pre-wrap; }
   </action>
   <action name="actionBeenden">
    <property name="icon">
-    <iconset resource="ressourcen/icons.qrc">
+    <iconset>
      <normaloff>:/icons/grafiken/icons/beenden.svg</normaloff>:/icons/grafiken/icons/beenden.svg</iconset>
    </property>
    <property name="text">
@@ -1601,7 +1604,7 @@ p, li { white-space: pre-wrap; }
   </action>
   <action name="actionSpiel_erstellen">
    <property name="icon">
-    <iconset resource="ressourcen/icons.qrc">
+    <iconset>
      <normaloff>:/icons/grafiken/icons/erstellen.svg</normaloff>:/icons/grafiken/icons/erstellen.svg</iconset>
    </property>
    <property name="text">
@@ -1613,7 +1616,7 @@ p, li { white-space: pre-wrap; }
   </action>
   <action name="actionOptionen">
    <property name="icon">
-    <iconset resource="ressourcen/icons.qrc">
+    <iconset>
      <normaloff>:/icons/grafiken/icons/optionen.svg</normaloff>:/icons/grafiken/icons/optionen.svg</iconset>
    </property>
    <property name="text">
@@ -1656,30 +1659,8 @@ p, li { white-space: pre-wrap; }
    <header location="global">startfeld.h</header>
   </customwidget>
  </customwidgets>
- <resources>
-  <include location="ressourcen/wurfel.qrc"/>
-  <include location="ressourcen/felder.qrc"/>
-  <include location="ressourcen/figuren.qrc"/>
-  <include location="ressourcen/icons.qrc"/>
- </resources>
- <connections>
-  <connection>
-   <sender>pushButton</sender>
-   <signal>clicked()</signal>
-   <receiver>lineEdit</receiver>
-   <slot>clear()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>615</x>
-     <y>446</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>548</x>
-     <y>454</y>
-    </hint>
-   </hints>
-  </connection>
- </connections>
+ <resources/>
+ <connections/>
  <slots>
   <slot>setChattext()</slot>
  </slots>
