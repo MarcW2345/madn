@@ -1,6 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-
+#include <cmath>
 void MainWindow::spielfelderInit()
 {
     spielfeld[1]=ui->startposgelb;
@@ -79,7 +79,7 @@ void MainWindow::figurenInit(int anzahl,int figurArt)
     }
     for(int i=0;i<16;i++)
     {
-        zielfelder[i]->freistellen();
+        //zielfelder[i]->freistellen();
         zielfelder[i]->setFigurArt(figurArt);
     }
     if(anzahl>=1)
@@ -171,5 +171,138 @@ void MainWindow::startfelderInit(){
         startfelder[i]->setfeldNr(i);
         startfelder[i]->setNext(31);
     }
+}
+//Funktion zum
+void MainWindow::delayAnimation(int n)
+{
+    QTime dieTime= QTime::currentTime().addMSecs(n);
+    while( QTime::currentTime() < dieTime )
+    QCoreApplication::processEvents(QEventLoop::AllEvents, 100);
+}
+
+void MainWindow::wuerfelAnimation()
+{
+    animationGelb[0]=ui->animationGelb1;
+    animationGelb[1]=ui->animationGelb2;
+    animationGelb[2]=ui->animationGelb3;
+    animationGelb[3]=ui->animationGelb4;
+    animationGelb[4]=ui->animationGelb5;
+    animationGrun[0]=ui->animationGrun1;
+    animationGrun[1]=ui->animationGrun2;
+    animationGrun[2]=ui->animationGrun3;
+    animationGrun[3]=ui->animationGrun4;
+    animationGrun[4]=ui->animationGrun5;
+    animationRot[0]=ui->animationRot1;
+    animationRot[1]=ui->animationRot2;
+    animationRot[2]=ui->animationRot3;
+    animationRot[3]=ui->animationRot4;
+    animationRot[4]=ui->animationRot1;
+    animationBlau[0]=ui->animationBlau1;
+    animationBlau[1]=ui->animationBlau2;
+    animationBlau[2]=ui->animationBlau3;
+    animationBlau[3]=ui->animationBlau4;
+    animationBlau[4]=ui->animationBlau1;
+    if(madn->getAnDerReihe()==gelb){
+        ui->animationGelb5->setPixmap(QPixmap(QString::fromUtf8("")));
+        for(int i=0;i<4;i++)
+        {
+           int zufall=((rand()%6)+1);
+           setzeBild(zufall,i);
+           animationGelb[i]->setPixmap(QPixmap(QString::fromUtf8("")));
+        }
+        setzeBild(ui->hauptwurfel->getAugen(), 4);
+    }
+    else if(madn->getAnDerReihe()==grun){
+        ui->animationGrun5->setPixmap(QPixmap(QString::fromUtf8("")));
+        for(int i=0;i<4;i++)
+        {
+           int zufall=((rand()%6)+1);
+           setzeBild(zufall,i);
+           animationGrun[i]->setPixmap(QPixmap(QString::fromUtf8("")));
+        }
+        setzeBild(ui->hauptwurfel->getAugen(), 4);
+    }
+    else if(madn->getAnDerReihe()==rot){
+        ui->animationRot5->setPixmap(QPixmap(QString::fromUtf8("")));
+        for(int i=0;i<4;i++)
+        {
+           int zufall=((rand()%6)+1) ;
+           setzeBild(zufall,i);
+           animationRot[i]->setPixmap(QPixmap(QString::fromUtf8("")));
+        }
+        setzeBild(ui->hauptwurfel->getAugen(), 4);
+    }
+    else if(madn->getAnDerReihe()==blau){
+        ui->animationBlau5->setPixmap(QPixmap(QString::fromUtf8("")));
+        for(int i=0;i<4;i++)
+        {
+           int zufall=((rand()%6)+1) ;
+           setzeBild(zufall,i);
+           animationBlau[i]->setPixmap(QPixmap(QString::fromUtf8("")));
+        }
+        setzeBild(ui->hauptwurfel->getAugen(), 4);
+    }
+}
+
+void MainWindow::setzeBild(int p,int i)
+{
+    switch(p)
+    {
+    case 1: switch(madn->getAnDerReihe())
+        {
+        case gelb:animationGelb[i]->setPixmap(QPixmap(QString::fromUtf8(":/wurfel/grafiken/wurfel/gelb1.svg"))); break;
+        case grun:animationGrun[i]->setPixmap(QPixmap(QString::fromUtf8(":/wurfel/grafiken/wurfel/grun1.svg"))); break;
+        case blau:animationBlau[i]->setPixmap(QPixmap(QString::fromUtf8(":/wurfel/grafiken/wurfel/blau1.svg"))); break;
+        case rot:animationRot[i]->setPixmap(QPixmap(QString::fromUtf8(":/wurfel/grafiken/wurfel/rot1.svg"))); break;
+        case nichtBelegt: break;
+        }
+        break;
+    case 2: switch(madn->getAnDerReihe())
+        {
+        case gelb:animationGelb[i]->setPixmap(QPixmap(QString::fromUtf8(":/wurfel/grafiken/wurfel/gelb2.svg"))); break;
+        case grun:animationGrun[i]->setPixmap(QPixmap(QString::fromUtf8(":/wurfel/grafiken/wurfel/grun2.svg"))); break;
+        case blau:animationBlau[i]->setPixmap(QPixmap(QString::fromUtf8(":/wurfel/grafiken/wurfel/blau2.svg"))); break;
+        case rot:animationRot[i]->setPixmap(QPixmap(QString::fromUtf8(":/wurfel/grafiken/wurfel/rot2.svg"))); break;
+        case nichtBelegt: break;
+        }
+        break;
+    case 3: switch(madn->getAnDerReihe())
+        {
+        case gelb:animationGelb[i]->setPixmap(QPixmap(QString::fromUtf8(":/wurfel/grafiken/wurfel/gelb3.svg"))); break;
+        case grun:animationGrun[i]->setPixmap(QPixmap(QString::fromUtf8(":/wurfel/grafiken/wurfel/grun3.svg"))); break;
+        case blau:animationBlau[i]->setPixmap(QPixmap(QString::fromUtf8(":/wurfel/grafiken/wurfel/blau3.svg"))); break;
+        case rot:animationRot[i]->setPixmap(QPixmap(QString::fromUtf8(":/wurfel/grafiken/wurfel/rot3.svg"))); break;
+        case nichtBelegt: break;
+        }
+        break;
+    case 4: switch(madn->getAnDerReihe())
+        {
+        case gelb:animationGelb[i]->setPixmap(QPixmap(QString::fromUtf8(":/wurfel/grafiken/wurfel/gelb4.svg"))); break;
+        case grun:animationGrun[i]->setPixmap(QPixmap(QString::fromUtf8(":/wurfel/grafiken/wurfel/grun4.svg"))); break;
+        case blau:animationBlau[i]->setPixmap(QPixmap(QString::fromUtf8(":/wurfel/grafiken/wurfel/blau4.svg"))); break;
+        case rot:animationRot[i]->setPixmap(QPixmap(QString::fromUtf8(":/wurfel/grafiken/wurfel/rot4.svg"))); break;
+        case nichtBelegt: break;
+        }
+        break;
+    case 5: switch(madn->getAnDerReihe())
+        {
+        case gelb:animationGelb[i]->setPixmap(QPixmap(QString::fromUtf8(":/wurfel/grafiken/wurfel/gelb5.svg"))); break;
+        case grun:animationGrun[i]->setPixmap(QPixmap(QString::fromUtf8(":/wurfel/grafiken/wurfel/grun5.svg"))); break;
+        case blau:animationBlau[i]->setPixmap(QPixmap(QString::fromUtf8(":/wurfel/grafiken/wurfel/blau5.svg"))); break;
+        case rot:animationRot[i]->setPixmap(QPixmap(QString::fromUtf8(":/wurfel/grafiken/wurfel/rot5.svg"))); break;
+        case nichtBelegt: break;
+        }
+        break;
+    case 6: switch(madn->getAnDerReihe())
+        {
+        case gelb:animationGelb[i]->setPixmap(QPixmap(QString::fromUtf8(":/wurfel/grafiken/wurfel/gelb6.svg"))); break;
+        case grun:animationGrun[i]->setPixmap(QPixmap(QString::fromUtf8(":/wurfel/grafiken/wurfel/grun6.svg"))); break;
+        case blau:animationBlau[i]->setPixmap(QPixmap(QString::fromUtf8(":/wurfel/grafiken/wurfel/blau6.svg"))); break;
+        case rot:animationRot[i]->setPixmap(QPixmap(QString::fromUtf8(":/wurfel/grafiken/wurfel/rot6.svg"))); break;
+        case nichtBelegt: break;
+        }
+        break;
+    }
+    delayAnimation(200);
 }
 

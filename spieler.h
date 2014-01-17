@@ -33,6 +33,7 @@ public:
     void setDarfKlicken(bool n) {darfKlicken=n;}
     void anzStartfeldVerringern() {anzStartfeld--;}
     void anzStartfeldErhoehen() {anzStartfeld++;}
+    int getAnzStartfeld() {return anzStartfeld;}
     int getAnzZielfeld() {return anzZielfeld;}
     void anzZielfeldErhoehen() {anzZielfeld++;}
 public slots:
@@ -44,6 +45,8 @@ signals:
     void spielerFertig();
     void darfWurfeln();
     void wurfelFarbe(Zustand);
+    void setLabelText(QString);
+    void gewonnen();
 };
 
 #endif // SPIELER_H

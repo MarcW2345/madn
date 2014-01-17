@@ -9,9 +9,8 @@ MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
-
     ui->setupUi(this);
-    setFixedSize(1250,800);
+    setFixedSize(1100,700);
     spielfelderInit();
     zielfelderInit();
     startfelderInit();
@@ -36,12 +35,17 @@ MainWindow::MainWindow(QWidget *parent) :
         connect (user[i], SIGNAL(darfWurfeln()),ui->hauptwurfel, SLOT(darfWurfelnSlot()));
         connect (user[i], SIGNAL(spielerFertig()),madn, SLOT(naechster()));
         connect (user[i], SIGNAL(spielerFertig()),timeout, SLOT(starte()));
+        connect (user[i], SIGNAL(setLabelText(QString)), ui->label, SLOT(setText(QString)));
+        connect (user[i], SIGNAL(gewonnen()), madn, SLOT(siegerGefunden()));
     }
     connect (timeout, SIGNAL(zeitAbgelaufen()),madn, SLOT(naechster()));
     connect (madn, SIGNAL(timerStart()),timeout, SLOT(starte()));
 
     connect (timeout, SIGNAL(sekundeVorbei(int)), this, SLOT(anderTimer(int)));
     lokal=true;
+    connect (ui->hauptwurfel, SIGNAL(setLabelText(QString)), ui->label, SLOT(setText(QString)));
+    connect (madn, SIGNAL(setLabelText(QString)), ui->label, SLOT(setText(QString)));
+
 }
 
 MainWindow::~MainWindow()
@@ -62,15 +66,18 @@ void MainWindow::settext()
 
 void MainWindow::on_actionSpiel_beitreten_triggered()
 {
-    this->d=new Dialog(this);
+    this->d = new Dialog(this);
+    connect(d, SIGNAL(verbindungHergestellt(Netzwerkverbindung*)), this, SLOT(setzeNetzwerkverbindung(Netzwerkverbindung*)));
     d->show();
 }
 
 void MainWindow::on_actionSpiel_erstellen_triggered()
 {
+    std::cout<<"Zustand:"<<ui->zielfeldgrun1->getZustand();
     this->e=new Erstellen(this);
     connect(e, SIGNAL(spielparameter(int,int,int,bool)),
             this, SLOT(empfangeSpielparamter(int,int,int,bool)));
+    connect(e, SIGNAL(serverGestartet(Netzwerkverbindung*)), this, SLOT(setzeNetzwerkverbindung(Netzwerkverbindung*)));
     e->show();
 }
 void MainWindow::wurfelPressed(int i)
@@ -84,6 +91,7 @@ void MainWindow::spiele(Zustand n)
 }
 void MainWindow::zugPhase(int n)
 {
+    wuerfelAnimation();
     bool kannSpielen=gueltigerZugVorhanden(n,madn->getAnDerReihe());
     user[(madn->getAnDerReihe())-1]->setGueltigerZugVorhanden(kannSpielen);
     user[(madn->getAnDerReihe())-1]->zugPhase(n);
@@ -114,3 +122,21 @@ void MainWindow::empfangeSpielparamter(int timer, int anzSpieler,
     */
 }
 
+void MainWindow::setzeNetzwerkverbindung(Netzwerkverbindung *verbindung) {
+    connect(verbindung, SIGNAL(chatEmpfangen(QString)), ui->textBrowser, SLOT(append(QString)));
+    connect(this, SIGNAL(nachrichtZuSenden(QString)), verbindung, SLOT(sendeChat(QString)));
+}
+
+void MainWindow::on_pushButton_clicked()
+{
+    QString text = ui->lineEdit->text();
+    ui->lineEdit->clear();
+    ui->textBrowser->append(text);
+    emit nachrichtZuSenden(text);
+}
+
+//Cheat-Button
+void MainWindow::on_actionOptionen_triggered()
+{
+    ui->hauptwurfel->sechs();
+}

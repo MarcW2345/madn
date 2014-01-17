@@ -17,9 +17,11 @@ public slots:
     void naechster();
     void initSpiel(int);
     void starteSpiel();
+    void siegerGefunden();
 signals:
     void spiele(Zustand);
     void timerStart();
+    void setLabelText(QString);
 
 };
 

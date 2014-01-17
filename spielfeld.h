@@ -8,6 +8,8 @@ class Spielfeld : public Feld
     Q_OBJECT
 private:
     int spielfeldNr;
+protected:
+    Zustand pseudoZustand;
 public:
    explicit Spielfeld(QWidget *parent = 0);
    void setSpielfeldNr(int _spielfeldNr){
@@ -16,6 +18,8 @@ public:
    int getSpielfeldNr(){return spielfeldNr;}
    virtual int getnextZielposition(){return 0;}
    void feldUeberspringen(Zustand);
+   void setpseudoZustand(Zustand pseudo){ pseudoZustand=pseudo;}
+   Zustand getpseudoZustand(){return pseudoZustand;}
 
 signals:
 

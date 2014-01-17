@@ -36,3 +36,8 @@ void Spiel::starteSpiel()
      emit spiele(anDerReihe);
      emit timerStart();
  }
+
+void Spiel::siegerGefunden()
+{
+    emit setLabelText(QString("Das Spiel ist vorbei, der Spieler mit der Farbe %1 hat gewonnen").arg(anDerReihe));
+}

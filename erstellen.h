@@ -4,6 +4,8 @@
 #include <QDialog>
 #include <QStringList>
 
+#include "Netzwerkverbindung.h"
+
 namespace Ui {
 class Erstellen;
 }
@@ -40,7 +42,7 @@ public:
 
 signals:
     void spielparameter(int,int,int,bool);
-
+    void serverGestartet(Netzwerkverbindung *verbindung);
 };
 
 #endif // ERSTELLEN_H

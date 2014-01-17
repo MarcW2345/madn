@@ -10,6 +10,7 @@ class Wurfel : public QLabel
 public:
     explicit Wurfel(QWidget *parent = 0);
     int getAugen(){return augen;}
+    void sechs();
 
 private:
     int augen_alt;
@@ -32,6 +33,7 @@ signals:
     void setzeAugen(int);
     void habeGewurfelt(int);
     void zugPhase(int);
+    void setLabelText(QString);
 };
 
 #endif // WURFEL_H

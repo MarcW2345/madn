@@ -21,3 +21,4 @@ void MainWindow::spielInit(int anzSpieler,bool n)
         connect (madn, SIGNAL(spiele(Zustand)), this, SLOT(spiele(Zustand)));
     }
 }
+

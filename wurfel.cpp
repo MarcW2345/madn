@@ -140,6 +140,17 @@ void Wurfel::mousePressEvent(QMouseEvent *ev)
     }
 }
 
+void Wurfel::sechs()
+{
+    if (darfWurfeln)
+    {
+        darfWurfeln=false;
+        augen=6;
+        setzeBild(augen);
+        emit zugPhase(augen);
+    }
+}
+
 void Wurfel::hatGewurfelt(int n)
 {
     emit wurfelPressed(wurfeln());

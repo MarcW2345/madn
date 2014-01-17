@@ -17,6 +17,7 @@ void Spieler::wurfelPhase()
     {
         anzGewurfelt++;
         std::cout << "Bitte wuerfeln sie zum " << anzGewurfelt << ". mal.." << std::endl;
+        emit setLabelText(QString("Bitte wuerfeln sie zum %1. mal").arg(anzGewurfelt));
         emit darfWurfeln();
     }
     else
@@ -101,17 +102,23 @@ void Spieler::zugPhase(int n)
 void Spieler::checkPhase()
 {
     if (anzZielfeld==4)
-        zuendeGespielt=true;
-    if (augen==6)
     {
-        std::cout << "Sie haben eine 6 gewuerfelt und duerfen somit nochmal wuerfeln." << std::endl;
-        anzGewurfelt=0;
-        wurfelPhase();
+        emit gewonnen();
+        zuendeGespielt=true;
     }
     else
     {
-        std::cout << "Spieler ist fertig..." << std::endl;
-        emit spielerFertig();
+        if (augen==6)
+        {
+           std::cout << "Sie haben eine 6 gewuerfelt und duerfen somit nochmal wuerfeln." << std::endl;
+           anzGewurfelt=0;
+           wurfelPhase();
+        }
+        else
+        {
+            std::cout << "Spieler ist fertig..." << std::endl;
+            emit spielerFertig();
+        }
     }
 }
 

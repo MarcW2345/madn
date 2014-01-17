@@ -1,15 +1,21 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include <QTime>
+#include <QCoreApplication>
+#include <QEventLoop>
 
 // Überprüft Gültigkeit für den Klick auf einem Spielfeld
 bool MainWindow::gueltigerZug(int aktuell, Zustand zustaende,int augen){
     for(int i=0;i<augen;i++)
     {
+        spielfeld[aktuell]->setpseudoZustand(zustaende);
         int next=spielfeld[aktuell]->getNext();
         // Für den Fall, dass im selben Zug in Zielfelder gelaufen wird
         if(next==0){
             next=spielfeld[aktuell]->getnextZielposition();
+            spielfeld[aktuell]->setpseudoZustand(nichtBelegt);
             aktuell=next;
+            if(zielfelder[aktuell]->getZustand()==nichtBelegt){
             for(int j=i+1;j<augen;j++)
                {
                 next=zielfelder[aktuell]->getNext();
@@ -21,12 +27,20 @@ bool MainWindow::gueltigerZug(int aktuell, Zustand zustaende,int augen){
                     aktuell=next;
                }
             break;
+         }
+            else
+                return false;
         }
         // Für den Fall, dass ganz normal im Spielfeld weitergelaufen wird
         else{
                 if(i==augen-1 && spielfeld[next]->getZustand()==zustaende)
                     return false;
+                    spielfeld[aktuell]->setpseudoZustand(nichtBelegt);
                 aktuell=next;
+                // Das ist für den Testlauf, es müssen ja quasi virtuell die Felder für einen kleinen Momemt belegt werden
+                if(i!=augen-1){
+                    spielfeld[aktuell]->setpseudoZustand(zustaende);
+                }
             }
     }
     return true;
@@ -60,6 +74,8 @@ bool MainWindow::gueltigerZugVorhanden(int augen, Zustand spielerFarbe)
         if (aktuell==spielerFarbe && gueltigerZugZiel(j,aktuell,augen))
             return true;
     }
+    if (augen==6 && user[spielerFarbe-1]->getAnzStartfeld()>0)
+        return true;
     return false;
 }
 
@@ -67,6 +83,7 @@ bool MainWindow::gueltigerZugVorhanden(int augen, Zustand spielerFarbe)
 bool MainWindow::startpositionGueltig(int aktuell)
 {
     int i;
+    int augen=ui->hauptwurfel->getAugen();
     switch (madn->getAnDerReihe())
     {
     case gelb: i=1;break;
@@ -80,9 +97,29 @@ bool MainWindow::startpositionGueltig(int aktuell)
         std::cout << "1 bestanden" << std::endl;
         if (i==aktuell)
         {
-            user[madn->getAnDerReihe()-1]->setStartpositionBelegt(false);
-            std::cout << "Startposition wird frei gemacht" << std::endl;
-            return true;
+            Zustand zustaende=spielfeld[aktuell]->getZustand();
+            if (gueltigerZug(aktuell,zustaende,augen))
+            {
+                user[madn->getAnDerReihe()-1]->setStartpositionBelegt(false);
+                std::cout << "Startposition wird frei gemacht" << std::endl;
+                return true;
+            }
+            else
+            {
+                spielfeld[aktuell]->blinken();
+                int next;
+                for (int j=0;j<augen;j++)
+                {
+                    aktuell=spielfeld[aktuell]->getNext();
+                    next=spielfeld[aktuell]->getNext();
+                }
+                std::cout << "kann Startposition nicht frei machen, statt dessen wird die blockierende Figur bewegt." << std::endl;
+                user[madn->getAnDerReihe()-1]->setStartpositionBelegt(false);
+                feldPressed(next,aktuell,zustaende);
+                delay(100);
+                user[madn->getAnDerReihe()-1]->setStartpositionBelegt(true);
+                return false;
+            }
         }
         else
 
@@ -98,7 +135,7 @@ void MainWindow::feldPressed(int next,int aktuell, Zustand zustaende){
         int augen=ui->hauptwurfel->getAugen();
         // Abfrage bevor durchlaufen wird nach Gültigkeit des Spielzuges
         if(user[madn->getAnDerReihe()-1]->getDarfKlicken() && madn->getAnDerReihe()==spielfeld[aktuell]->getZustand()){
-        if(gueltigerZug(aktuell,zustaende,augen) && startpositionGueltig(aktuell)){
+        if(startpositionGueltig(aktuell) && gueltigerZug(aktuell,zustaende,augen)){
             int augen=ui->hauptwurfel->getAugen();
               for(int i=0;i<augen;i++)
               {
@@ -110,7 +147,7 @@ void MainWindow::feldPressed(int next,int aktuell, Zustand zustaende){
                       zielfelder[next]->feldUeberspringen(zustaende);
                       aktuell=next;
                       // nach Verzweigungsfeld wird ja noch auf Zielfelder gelaufen( restlichen Bewegungen)
-                      for(int j=i+1;j<augen-1;j++)
+                      for(int j=i+1;j<augen;j++)
                       {
                           next=zielfelder[aktuell]->getNext();
                           zielfelder[aktuell]->freistellen();
@@ -252,5 +289,12 @@ void MainWindow::fressen(Zustand Farbe){
             }
         }
    }
+}
+
+void MainWindow::delay(int n)
+{
+    QTime dieTime= QTime::currentTime().addMSecs(n);
+    while( QTime::currentTime() < dieTime )
+    QCoreApplication::processEvents(QEventLoop::AllEvents, 100);
 }
 
