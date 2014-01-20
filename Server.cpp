@@ -6,8 +6,9 @@
 
 Server::Server(QObject *parent) {
     server = new QTcpServer(this);
-    server->listen(QHostAddress::Any, 60123);
     connect(server, SIGNAL(newConnection()), this, SLOT(neueVerbindung()));
+
+    server->listen(QHostAddress::Any, 60123);
     for (int i = 0; i < CLIENTS_MAX; ++i) {
         clients[i] = 0;
     }
@@ -30,18 +31,28 @@ void Server::nachrichtEmpfangen() {
         std::cerr << "Server::nachrichtEmpfangen : sender() ist nicht QTcpSocket";
     }
     while (client->canReadLine()) {
-        QByteArray nachricht = client->readLine();
-        for (int i = 0; i < anzahlClients; ++i) {
-            if (clients[i] != client) {
-                clients[i]->write(nachricht);
+        QByteArray nachricht_bytes = client->readLine();
+        QString nachricht = QString::fromUtf8(nachricht_bytes);
+        QString typ = nachricht.section(QString::fromAscii("\x1F"),0,0);
+        if (typ == QString::fromAscii("chat")) {
+            for (int i = 0; i < anzahlClients; ++i) {
+                if (clients[i] != client) {
+                    clients[i]->write(nachricht_bytes);
+                }
             }
+            QString absender = nachricht.section(QString::fromAscii("\x1F"),1,1);
+            QString text = nachricht.section(QString::fromAscii("\x1F"),2,-1);
+            emit chatEmpfangen(QString::fromAscii("<b>") + absender + QString::fromAscii("</b>: ") + text);
         }
-        emit chatEmpfangen(QString::fromUtf8(nachricht));
     }
 }
 
 void Server::sendeChat(QString nachricht) {
     for (int i = 0; i < anzahlClients; ++i) {
+        clients[i]->write("chat");
+        clients[i]->write("\x1F");
+        clients[i]->write(name.toUtf8());
+        clients[i]->write("\x1F");
         clients[i]->write(nachricht.toUtf8());
         clients[i]->write("\n");
     }

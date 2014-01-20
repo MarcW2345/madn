@@ -14,6 +14,7 @@ private:
     QTcpServer *server;
     QTcpSocket *clients[CLIENTS_MAX];
     int anzahlClients;
+    QString name;
 private slots:
     void neueVerbindung();
     void nachrichtEmpfangen();

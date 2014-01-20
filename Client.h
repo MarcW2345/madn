@@ -8,6 +8,7 @@ class Client : public Netzwerkverbindung {
     Q_OBJECT
 private:
     QTcpSocket *socket;
+    QString name;
 private slots:
     void nachrichtEmpfangen();
 public:

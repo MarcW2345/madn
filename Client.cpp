@@ -23,12 +23,21 @@ bool Client::verbinden(QHostAddress adresse) {
 
 void Client::nachrichtEmpfangen() {
     while (socket->canReadLine()) {
-        QByteArray nachricht = socket->readLine();
-        emit chatEmpfangen(QString::fromUtf8(nachricht));
+        QString nachricht = QString::fromUtf8(socket->readLine());
+        QString typ = nachricht.section(QString::fromAscii("\x1F"),0,0);
+        if (typ == QString::fromAscii("chat")) {
+            QString absender = nachricht.section(QString::fromAscii("\x1F"),1,1);
+            QString text = nachricht.section(QString::fromAscii("\x1F"),2,-1);
+            emit chatEmpfangen(QString::fromAscii("<b>") + absender + QString::fromAscii("</b>: ") + text);
+        }
     }
 }
 
 void Client::sendeChat(QString nachricht) {
+    socket->write("chat");
+    socket->write("\x1F");
+    socket->write(name.toUtf8());
+    socket->write("\x1F");
     socket->write(nachricht.toUtf8());
     socket->write("\n");
 }
