@@ -27,17 +27,24 @@ public:
     void spielfelderInit();
     void zielfelderInit();
     void startfelderInit();
+    void figurenInit(int,int);
+    void spielInit(int,bool);
     void fressen(Zustand);
     bool gueltigerZug(int,Zustand,int);
     bool gueltigerZugZiel(int,Zustand,int);
+    bool gueltigerZugVorhanden(int,Zustand);
     bool startpositionGueltig(int);
-
+    void amZielAngelangt(Zustand);
+    void wuerfelAnimation();
+    void delayAnimation(int);
+    void setzeBild(int,int);
 
 private slots:
     void on_pushButton_clicked();
     void on_actionBeenden_triggered();
     void on_actionSpiel_beitreten_triggered();
     void on_actionSpiel_erstellen_triggered();
+    void on_actionOptionen_triggered();
 
 public slots:
     void settext();
@@ -61,6 +68,9 @@ private:
     Spiel *madn=new Spiel();
     Spieler* user[4]={new Spieler(),new Spieler(),new Spieler(),new Spieler()};
     Timeout* timeout=new Timeout();
+    QLabel* animationGelb[5],*animationGrun[5],*animationRot[5],*animationBlau[5];
+    bool lokal;
+    void delay(int);
 
 signals:
     void nachrichtZuSenden(QString nachricht);

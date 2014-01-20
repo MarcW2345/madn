@@ -10,6 +10,7 @@ protected:
     Zustand alterZustand;
     int next;
     int feldNr;
+    int figurArt;
     QPixmap figur;
 public:
     explicit Feld(QWidget *parent = 0);
@@ -19,10 +20,12 @@ public:
     void setfeldNr(int _feldNr){feldNr=_feldNr;}
     void setNext(int _next);
     void setalterZustand(Zustand _zustaende){alterZustand=_zustaende;}
+    Zustand getalterZustand(){return alterZustand;}
     virtual int getNext(){return next;}
     void setFigur();
+    void setFigurArt(int _figurArt){figurArt=_figurArt;}
+    void blinken();
     void feldBelegen(Zustand);
-    void feldUeberspringen(Zustand);
     void freistellen();
     void delayBelegen(int);
 

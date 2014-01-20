@@ -101,11 +101,11 @@ void Wurfel::setzeFarbe(Zustand farbe)
     spielerFarbe=farbe;
     switch(farbe)
     {
-    case gelb:this->setPixmap(QPixmap(QString::fromUtf8(":/wurfel/grafiken/wurfel/gelb1.svg"))); break;
-    case grun:this->setPixmap(QPixmap(QString::fromUtf8(":/wurfel/grafiken/wurfel/grun1.svg")));break;
-    case rot:this->setPixmap(QPixmap(QString::fromUtf8(":/wurfel/grafiken/wurfel/rot1.svg")));break;
-    case blau:this->setPixmap(QPixmap(QString::fromUtf8(":/wurfel/grafiken/wurfel/blau1.svg")));break;
-    case nichtBelegt:this->setPixmap(QPixmap(QString::fromUtf8(":/wurfel/grafiken/wurfel/wurfel1.svg")));break;
+    case gelb:this->setPixmap(QPixmap(QString::fromUtf8(":/wurfel/grafiken/wurfel/gelb.svg"))); break;
+    case grun:this->setPixmap(QPixmap(QString::fromUtf8(":/wurfel/grafiken/wurfel/grun.svg")));break;
+    case rot:this->setPixmap(QPixmap(QString::fromUtf8(":/wurfel/grafiken/wurfel/rot.svg")));break;
+    case blau:this->setPixmap(QPixmap(QString::fromUtf8(":/wurfel/grafiken/wurfel/blau.svg")));break;
+    case nichtBelegt:this->setPixmap(QPixmap(QString::fromUtf8(":/wurfel/grafiken/wurfel/wurfel.svg")));break;
     }
 }
 
@@ -135,7 +135,18 @@ void Wurfel::mousePressEvent(QMouseEvent *ev)
         emit wurfelPressed(augen_alt);
         setzeBild(augen_alt);
         augen=augen_alt;*/
-        delay(1000);
+       // delay(1000);
+        emit zugPhase(augen);
+    }
+}
+
+void Wurfel::sechs()
+{
+    if (darfWurfeln)
+    {
+        darfWurfeln=false;
+        augen=6;
+        setzeBild(augen);
         emit zugPhase(augen);
     }
 }

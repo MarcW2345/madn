@@ -2,6 +2,9 @@
 #include "mainwindow.h"
 #include "zustand.h"
 #include <iostream>
+#include <QTime>
+#include <QCoreApplication>
+#include <QEventLoop>
 
 Spieler::Spieler(QObject *parent) :
     QObject(parent)
@@ -14,6 +17,7 @@ void Spieler::wurfelPhase()
     {
         anzGewurfelt++;
         std::cout << "Bitte wuerfeln sie zum " << anzGewurfelt << ". mal.." << std::endl;
+        emit setLabelText(QString("Bitte wuerfeln sie zum %1. mal").arg(anzGewurfelt));
         emit darfWurfeln();
     }
     else
@@ -36,6 +40,7 @@ void Spieler::initSpieler(int i)
     awayFromKeyboard=false;
     startpositionBelegt=false;
     zuendeGespielt=false;
+    gueltigerZugVorhanden=false;
     anzGewurfelt=0;
     switch (i)
     {
@@ -58,8 +63,17 @@ void Spieler::zugPhase(int n)
     {
         if (anzStartfeld+anzZielfeld!=4)  //normales Szenario
         {
-            std::cout << "Bitte Figur zum bewegen aussuchen" << std::endl;
-            darfKlicken=true;
+            if (gueltigerZugVorhanden)
+            {
+                std::cout << "Bitte Figur zum bewegen aussuchen" << std::endl;
+                darfKlicken=true;
+            }
+            else
+            {
+                std::cout << "Sie können keine Figur bewegen und müssen somit passen." << std::endl;
+                delay(2000);
+                checkPhase();
+            }
         }
         else
         {
@@ -88,17 +102,23 @@ void Spieler::zugPhase(int n)
 void Spieler::checkPhase()
 {
     if (anzZielfeld==4)
-        zuendeGespielt=true;
-    if (augen==6)
     {
-        std::cout << "Sie haben eine 6 gewuerfelt und duerfen somit nochmal wuerfeln." << std::endl;
-        anzGewurfelt=0;
-        wurfelPhase();
+        emit gewonnen();
+        zuendeGespielt=true;
     }
     else
     {
-        std::cout << "Spieler ist fertig..." << std::endl;
-        emit spielerFertig();
+        if (augen==6)
+        {
+           std::cout << "Sie haben eine 6 gewuerfelt und duerfen somit nochmal wuerfeln." << std::endl;
+           anzGewurfelt=0;
+           wurfelPhase();
+        }
+        else
+        {
+            std::cout << "Spieler ist fertig..." << std::endl;
+            emit spielerFertig();
+        }
     }
 }
 
@@ -113,4 +133,11 @@ void Spieler::spiele(Zustand n)
 void Spieler::setzeAugen(int n)
 {
     augen=n;
+}
+
+void Spieler::delay(int n)
+{
+    QTime dieTime= QTime::currentTime().addMSecs(n);
+    while( QTime::currentTime() < dieTime )
+    QCoreApplication::processEvents(QEventLoop::AllEvents, 100);
 }

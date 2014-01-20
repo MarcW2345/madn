@@ -5,11 +5,12 @@ Spiel::Spiel(QObject *parent) :
 {
 }
 
-void Spiel::initSpiel()
+void Spiel::initSpiel(int n)
 {
     for (int i=0;i<4;i++)
         fertig[i]=false;
     anDerReihe=gelb;
+    anzSpieler=n;
 }
 
 void Spiel::starteSpiel()
@@ -30,6 +31,13 @@ void Spiel::starteSpiel()
          case blau: anDerReihe=gelb;break;
          case nichtBelegt: anDerReihe=nichtBelegt;break;
      }
+     if (anDerReihe>anzSpieler)
+         anDerReihe=gelb;
      emit spiele(anDerReihe);
      emit timerStart();
  }
+
+void Spiel::siegerGefunden()
+{
+    emit setLabelText(QString("Das Spiel ist vorbei, der Spieler mit der Farbe %1 hat gewonnen").arg(anDerReihe));
+}

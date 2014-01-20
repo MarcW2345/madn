@@ -7,7 +7,7 @@ class Verzweigungsfeld : public Spielfeld
 {
     Q_OBJECT
 private:
-    Zustand farbe;
+    Zustand farbe; // Verzweigungsfeld, damit klar ist wohin es weitergeht, also welche Zielfelder
     int nextZielposition;
 public:
     explicit Verzweigungsfeld(QWidget *parent = 0);
