@@ -23,18 +23,33 @@ bool Client::verbinden(QHostAddress adresse) {
 
 void Client::nachrichtEmpfangen() {
     while (socket->canReadLine()) {
-        QByteArray nachricht = socket->readLine();
-        emit chatEmpfangen(QString::fromUtf8(nachricht));
+        QString nachricht = QString::fromUtf8(socket->readLine());
+        QString typ = nachricht.section(QString::fromAscii("\x1F"),0,0);
+        if (typ == QString::fromAscii("chat")) {
+            QString absender = nachricht.section(QString::fromAscii("\x1F"),1,1);
+            QString text = nachricht.section(QString::fromAscii("\x1F"),2,-1);
+            emit chatEmpfangen(QString::fromAscii("<b>") + absender + QString::fromAscii("</b>: ") + text);
+        } else if (typ == QString::fromAscii("wurf")) {
+            int augenzahl = nachricht.section(QString::fromAscii("\x1F"),1,1).toInt(0, 10);
+            emit wurfelnEmpfangen(augenzahl);
+        }
     }
 }
 
-void Client::sendeChat(QString nachricht) {
+void Client::sendeChat(QString name, QString nachricht) {
+    socket->write("chat");
+    socket->write("\x1F");
+    socket->write(name.toUtf8());
+    socket->write("\x1F");
     socket->write(nachricht.toUtf8());
     socket->write("\n");
 }
 
-void Client::sendeWurfeln(quint8 augenzahl) {
-
+void Client::sendeWurfeln(int augenzahl) {
+    socket->write("wurf");
+    socket->write("\x1F");
+    socket->write(QString().setNum(augenzahl).toUtf8());
+    socket->write("\n");
 }
 
 void Client::sendeZug(int zug) {

@@ -1909,7 +1909,7 @@ p, li { white-space: pre-wrap; }
   </widget>
   <action name="actionSpiel_beitreten">
    <property name="icon">
-    <iconset resource="ressourcen/icons.qrc">
+    <iconset>
      <normaloff>:/icons/grafiken/icons/beitreten.svg</normaloff>:/icons/grafiken/icons/beitreten.svg</iconset>
    </property>
    <property name="text">
@@ -1921,7 +1921,7 @@ p, li { white-space: pre-wrap; }
   </action>
   <action name="actionBeenden">
    <property name="icon">
-    <iconset resource="ressourcen/icons.qrc">
+    <iconset>
      <normaloff>:/icons/grafiken/icons/beenden.svg</normaloff>:/icons/grafiken/icons/beenden.svg</iconset>
    </property>
    <property name="text">
@@ -1933,7 +1933,7 @@ p, li { white-space: pre-wrap; }
   </action>
   <action name="actionSpiel_erstellen">
    <property name="icon">
-    <iconset resource="ressourcen/icons.qrc">
+    <iconset>
      <normaloff>:/icons/grafiken/icons/erstellen.svg</normaloff>:/icons/grafiken/icons/erstellen.svg</iconset>
    </property>
    <property name="text">
@@ -1945,7 +1945,7 @@ p, li { white-space: pre-wrap; }
   </action>
   <action name="actionOptionen">
    <property name="icon">
-    <iconset resource="ressourcen/icons.qrc">
+    <iconset>
      <normaloff>:/icons/grafiken/icons/optionen.svg</normaloff>:/icons/grafiken/icons/optionen.svg</iconset>
    </property>
    <property name="text">

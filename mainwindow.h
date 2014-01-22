@@ -138,6 +138,7 @@ public slots:
     void anderTimer(int);
     void empfangeSpielparamter(int,int,int,bool,QString);
     void setzeNetzwerkverbindung(Netzwerkverbindung *verbindung);
+    void setzeName(QString name);
 
 private:
     Ui::MainWindow *ui; ///< UI Objekt
@@ -148,13 +149,14 @@ private:
     Zielfeld* zielfelder[17]; ///< Alle Zielfelder in Array
     Spiel *madn=new Spiel();
     Spieler* user[4]={new Spieler(),new Spieler(),new Spieler(),new Spieler()};
+    QString eigenName;
     Timeout* timeout=new Timeout();
     QLabel* animationGelb[5],*animationGrun[5],*animationRot[5],*animationBlau[5]; ///< Arrays fuer die Wuerfelanimation auf dem Spielbrett
     bool lokal;
     void delay(int);
 
 signals:
-    void nachrichtZuSenden(QString nachricht);
+    void nachrichtZuSenden(QString name, QString nachricht);
 };
 
 #endif // MAINWINDOW_H

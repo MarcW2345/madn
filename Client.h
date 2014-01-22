@@ -14,8 +14,8 @@ public:
     Client(QObject *parent);
     bool verbinden(QHostAddress adresse);
 public slots:
-    void sendeChat(QString nachricht);
-    void sendeWurfeln(quint8 augenzahl);
+    void sendeChat(QString name, QString nachricht);
+    void sendeWurfeln(int augenzahl);
     void sendeZug(int zug);
 signals:
     void verbindungVerloren();

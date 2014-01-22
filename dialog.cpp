@@ -34,5 +34,6 @@ void Dialog::on_pushButton_clicked()
         return;
     }
     emit verbindungHergestellt(client);
+    emit sendeName(ui->lineEdit_2->text());
     this->close();
 }

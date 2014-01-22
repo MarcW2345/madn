@@ -49,6 +49,7 @@ signals:
     void spielparameter(int,int,int,bool,QString);
     //void spielparameterNW(int,int,int);
     void serverGestartet(Netzwerkverbindung *verbindung);
+    void sendeName(QString name);
 };
 
 #endif // ERSTELLEN_H
