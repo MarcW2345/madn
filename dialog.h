@@ -25,6 +25,7 @@ private slots:
 
 signals:
     void verbindungHergestellt(Netzwerkverbindung *verbindung);
+    void sendeName(QString name);
 };
 
 #endif // DIALOG_H

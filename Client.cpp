@@ -36,7 +36,7 @@ void Client::nachrichtEmpfangen() {
     }
 }
 
-void Client::sendeChat(QString nachricht) {
+void Client::sendeChat(QString name, QString nachricht) {
     socket->write("chat");
     socket->write("\x1F");
     socket->write(name.toUtf8());

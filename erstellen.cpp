@@ -70,6 +70,7 @@ void Erstellen::bestaetigen()
     if (!lokalesSpiel) {
         Server *server = new Server(this->parent());
         emit serverGestartet(server);
+        emit sendeName(benutzername);
         this->l = new Lobby(this);
         l->show();
         connect(l, SIGNAL(spielerzahl(int)),

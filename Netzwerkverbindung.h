@@ -18,7 +18,7 @@ enum NachrichtenTyp {
 class Netzwerkverbindung : public QObject {
     Q_OBJECT
 public slots:
-    virtual void sendeChat(QString nachricht) = 0;
+    virtual void sendeChat(QString name, QString nachricht) = 0;
     virtual void sendeWurfeln(int augenzahl) = 0;
     virtual void sendeZug(int zug) = 0;
 signals:

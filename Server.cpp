@@ -55,7 +55,7 @@ void Server::nachrichtEmpfangen() {
     }
 }
 
-void Server::sendeChat(QString nachricht) {
+void Server::sendeChat(QString name, QString nachricht) {
     for (int i = 0; i < anzahlClients; ++i) {
         clients[i]->write("chat");
         clients[i]->write("\x1F");
@@ -67,7 +67,12 @@ void Server::sendeChat(QString nachricht) {
 }
 
 void Server::sendeWurfeln(int augenzahl) {
-
+    for (int i = 0; i < anzahlClients; ++i) {
+        clients[i]->write("wurf");
+        clients[i]->write("\x1F");
+        clients[i]->write(QString().setNum(augenzahl).toUtf8());
+        clients[i]->write("\n");
+    }
 }
 
 void Server::sendeZug(int zug) {

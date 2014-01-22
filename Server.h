@@ -14,12 +14,11 @@ private:
     QTcpServer *server;
     QTcpSocket *clients[CLIENTS_MAX];
     int anzahlClients;
-    QString name;
 private slots:
     void neueVerbindung();
     void nachrichtEmpfangen();
 public slots:
-    void sendeChat(QString nachricht);
+    void sendeChat(QString name, QString nachricht);
     void sendeWurfeln(int augenzahl);
     void sendeZug(int zug);
 public:

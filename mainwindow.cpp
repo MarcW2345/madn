@@ -72,6 +72,7 @@ void MainWindow::on_actionSpiel_beitreten_triggered()
 {
     this->d = new Dialog(this);
     connect(d, SIGNAL(verbindungHergestellt(Netzwerkverbindung*)), this, SLOT(setzeNetzwerkverbindung(Netzwerkverbindung*)));
+    connect(d, SIGNAL(sendeName(QString)), this, SLOT(setzeName(QString)));
     d->show();
 }
 
@@ -82,6 +83,7 @@ void MainWindow::on_actionSpiel_erstellen_triggered()
     connect(e, SIGNAL(spielparameter(int,int,int,bool,QString)),
             this, SLOT(empfangeSpielparamter(int,int,int,bool,QString)));
     connect(e, SIGNAL(serverGestartet(Netzwerkverbindung*)), this, SLOT(setzeNetzwerkverbindung(Netzwerkverbindung*)));
+    connect(e, SIGNAL(sendeName(QString)), this, SLOT(setzeName(QString)));
     e->show();
 }
 void MainWindow::wurfelPressed(int augen,int i)
@@ -119,6 +121,7 @@ void MainWindow::empfangeSpielparamter(int timer, int anzSpieler,
     figurenInit(anzSpieler,figurArt);
     timeout->setSekunden(timer);
     spielInit(anzSpieler,lokalesSpiel);
+    eigenName = name;
     for(int i=0;i<4;i++)
         user[i]->initSpieler(i);
     if (lokalesSpiel)
@@ -143,19 +146,23 @@ void MainWindow::empfangeSpielparamter(int timer, int anzSpieler,
 
 void MainWindow::setzeNetzwerkverbindung(Netzwerkverbindung *verbindung) {
     connect(verbindung, SIGNAL(chatEmpfangen(QString)), ui->textBrowser, SLOT(append(QString)));
-    connect(this, SIGNAL(nachrichtZuSenden(QString)), verbindung, SLOT(sendeChat(QString)));
+    connect(this, SIGNAL(nachrichtZuSenden(QString, QString)), verbindung, SLOT(sendeChat(QString, QString)));
 }
 
 void MainWindow::on_pushButton_clicked()
 {
     QString text = ui->lineEdit->text();
     ui->lineEdit->clear();
-    ui->textBrowser->append(text);
-    emit nachrichtZuSenden(text);
+    ui->textBrowser->append(QString::fromUtf8("<b>") + eigenName + QString::fromUtf8("</b>: ") + text);
+    emit nachrichtZuSenden(eigenName, text);
 }
 
 //Cheat-Button
 void MainWindow::on_actionOptionen_triggered()
 {
     ui->hauptwurfel->sechs();
+}
+
+void MainWindow::setzeName(QString name) {
+    eigenName = name;
 }
