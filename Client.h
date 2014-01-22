@@ -16,7 +16,7 @@ public:
     bool verbinden(QHostAddress adresse);
 public slots:
     void sendeChat(QString nachricht);
-    void sendeWurfeln(quint8 augenzahl);
+    void sendeWurfeln(int augenzahl);
     void sendeZug(int zug);
 signals:
     void verbindungVerloren();

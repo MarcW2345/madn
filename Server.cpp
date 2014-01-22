@@ -43,6 +43,14 @@ void Server::nachrichtEmpfangen() {
             QString absender = nachricht.section(QString::fromAscii("\x1F"),1,1);
             QString text = nachricht.section(QString::fromAscii("\x1F"),2,-1);
             emit chatEmpfangen(QString::fromAscii("<b>") + absender + QString::fromAscii("</b>: ") + text);
+        } else if (typ == QString::fromAscii("wurf")) {
+            for (int i = 0; i < anzahlClients; ++i) {
+                if (clients[i] != client) {
+                    clients[i]->write(nachricht_bytes);
+                }
+            }
+            int augenzahl = nachricht.section(QString::fromAscii("\x1F"),1,1).toInt();
+            emit wurfelnEmpfangen(augenzahl);
         }
     }
 }
@@ -58,7 +66,7 @@ void Server::sendeChat(QString nachricht) {
     }
 }
 
-void Server::sendeWurfeln(quint8 augenzahl) {
+void Server::sendeWurfeln(int augenzahl) {
 
 }
 

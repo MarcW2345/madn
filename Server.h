@@ -20,7 +20,7 @@ private slots:
     void nachrichtEmpfangen();
 public slots:
     void sendeChat(QString nachricht);
-    void sendeWurfeln(quint8 augenzahl);
+    void sendeWurfeln(int augenzahl);
     void sendeZug(int zug);
 public:
     Server(QObject *parent);
