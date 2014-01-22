@@ -4,7 +4,16 @@
 #include <QCoreApplication>
 #include <QEventLoop>
 
-// Überprüft Gültigkeit für den Klick auf einem Spielfeld
+/**
+ * @param aktuell
+ * Beschreibt den Feldeintrag von dem aus gegangen werden soll.
+ * @param zustaende
+ * Beschreibt den Zustand, den das geklickte Feld hat
+ * @param augen
+ * Beschreibt die Augensumme, die gegangen werden soll.
+ * @return
+ * True fuer einen moeglichen Zug und False fuer einen nicht moeglichen Zug.
+ */
 bool MainWindow::gueltigerZug(int aktuell, Zustand zustaende,int augen){
     for(int i=0;i<augen;i++)
     {
@@ -45,6 +54,16 @@ bool MainWindow::gueltigerZug(int aktuell, Zustand zustaende,int augen){
     }
     return true;
 }
+/**
+ * @param aktuell
+ * Beschreibt den Feldeintrag von dem aus gegangen werden soll.
+ * @param zustaende
+ * Beschreibt den Zustand, den das geklickte Feld hat
+ * @param augen
+ * Beschreibt die Augensumme, die gegangen werden soll.
+ * @return
+ * True fuer einen moeglichen Zug und False fuer einen nicht moeglichen Zug.
+ */
 bool MainWindow::gueltigerZugZiel(int aktuell,Zustand zustaende, int augen){
     for(int i=0;i<augen;i++)
        {
@@ -68,7 +87,7 @@ bool MainWindow::gueltigerZugVorhanden(int augen, Zustand spielerFarbe)
         if (aktuell==spielerFarbe && gueltigerZug(j,aktuell,augen))
             return true;
     }
-    for (int j=0;j<16;j++)
+    for (int j=1;j<17;j++)
     {
         aktuell=zielfelder[j]->getZustand();
         if (aktuell==spielerFarbe && gueltigerZugZiel(j,aktuell,augen))
@@ -128,9 +147,15 @@ bool MainWindow::startpositionGueltig(int aktuell)
     }
     else
         return true;
-
 }
-
+/**
+ * @param next
+ * Das naechste Element des Feldes mit der Feldnummer aktuell.
+ * @param aktuell
+ * Die Feldnummer des Feld auf das geklickt wurde.
+ * @param zustaende
+ * Der Zustand des Feldes auf das geklickt wurde.
+ */
 void MainWindow::feldPressed(int next,int aktuell, Zustand zustaende){
         int augen=ui->hauptwurfel->getAugen();
         // Abfrage bevor durchlaufen wird nach Gültigkeit des Spielzuges
@@ -182,14 +207,19 @@ void MainWindow::feldPressed(int next,int aktuell, Zustand zustaende){
         }
 }
 
-
-// Startfeld mit simpler Verkettung auf Startposition
+/**
+ * @param next
+ * Das naechste Element des Feldes mit der Feldnummer aktuell.
+ * @param aktuell
+ * Die Feldnummer des Feld auf das geklickt wurde.
+ * @param zustaende
+ * Der Zustand des Feldes auf das geklickt wurde.
+ */
 void MainWindow::startfeldPressed(int next, int aktuell, Zustand zustaende){
     if(user[madn->getAnDerReihe()-1]->getDarfKlicken() && madn->getAnDerReihe()==startfelder[aktuell]->getZustand()){
         ui->textBrowser->append("ich habe Zugriff");
        if (ui->hauptwurfel->getAugen()==6)
        {
-          std::cout << "1" << std::endl;
           ui->textBrowser->append(QString("Naechstes Element: %1").arg(next));
           startfelder[aktuell]->freistellen();
           Zustand Farbe=spielfeld[next]->getZustand();
@@ -209,8 +239,14 @@ void MainWindow::startfeldPressed(int next, int aktuell, Zustand zustaende){
     }
 }
 
-
-// Funktion, wenn auf zielfeld geklick wird, da ja hier grundsätzlich anders gearbeitet wird
+/**
+ * @param next
+ * Das naechste Element des Feldes mit der Feldnummer aktuell.
+ * @param aktuell
+ * Die Feldnummer des Feld auf das geklickt wurde.
+ * @param zustaende
+ * Der Zustand des Feldes auf das geklickt wurde.
+ */
 void MainWindow::zielfeldPressed(int next,int aktuell, Zustand zustaende){
     int augen=ui->hauptwurfel->getAugen();
         //hier muss selbstverstaendlich vor dem ausführen überprüft werden auf Gültigkeit des Zugs
@@ -239,10 +275,10 @@ void MainWindow::amZielAngelangt(Zustand n)
     int naechstesZielfeld;
     switch(n)
     {
-    case gelb:letztesZielfeld=3; break;
-    case grun:letztesZielfeld=7;break;
-    case rot:letztesZielfeld=11;break;
-    case blau:letztesZielfeld=15;break;
+    case gelb:letztesZielfeld=4; break;
+    case grun:letztesZielfeld=8;break;
+    case rot:letztesZielfeld=12;break;
+    case blau:letztesZielfeld=16;break;
     case nichtBelegt:letztesZielfeld=99;break;
     }
     naechstesZielfeld=(letztesZielfeld-(user[madn->getAnDerReihe()-1]->getAnzZielfeld()));

@@ -32,6 +32,20 @@
     </layout>
    </item>
    <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_5">
+     <item>
+      <widget class="QLabel" name="label_5">
+       <property name="text">
+        <string>Benutzername (nur für Netzwerkspiel)</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="leBenutzername"/>
+     </item>
+    </layout>
+   </item>
+   <item>
     <layout class="QVBoxLayout" name="verticalLayout_7">
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout_4">
@@ -78,7 +92,7 @@
        <item>
         <widget class="QSpinBox" name="sbTimeout">
          <property name="minimum">
-          <number>10</number>
+          <number>1</number>
          </property>
          <property name="maximum">
           <number>300</number>

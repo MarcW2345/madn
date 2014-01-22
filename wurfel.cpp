@@ -14,6 +14,11 @@ Wurfel::Wurfel(QWidget *parent) :
     darfWurfeln=false;
 }
 
+/**
+ * Verzögerungsfunktion, die für die Animationen und die Anzeige genutzt wird.
+ * @param n
+ * Anzahl der Millisekunden um die verzögert werden soll
+ */
 void Wurfel::delay(int n)
 {
     QTime dieTime= QTime::currentTime().addMSecs(n);
@@ -21,6 +26,11 @@ void Wurfel::delay(int n)
     QCoreApplication::processEvents(QEventLoop::AllEvents, 100);
 }
 
+/**
+ * Das Bild des Würfels wird an die gewürfelte Augenzahl angepasst.
+ * @param p
+ * Die gewürfelte Augenzahl
+ */
 void Wurfel::setzeBild(int p)
 {
     switch(p)
@@ -84,60 +94,11 @@ void Wurfel::setzeBild(int p)
 
 int Wurfel::wurfeln()
 {
-    augen_alt2=augen;
-    while(augen==augen_alt2)
-       augen=((rand()%6)+1) ;
-    setzeBild(augen);
-    return (augen);
-}
-
-void Wurfel::darfWurfelnSlot()
-{
-    darfWurfeln=true;
-}
-
-void Wurfel::setzeFarbe(Zustand farbe)
-{
-    spielerFarbe=farbe;
-    switch(farbe)
-    {
-    case gelb:this->setPixmap(QPixmap(QString::fromUtf8(":/wurfel/grafiken/wurfel/gelb.svg"))); break;
-    case grun:this->setPixmap(QPixmap(QString::fromUtf8(":/wurfel/grafiken/wurfel/grun.svg")));break;
-    case rot:this->setPixmap(QPixmap(QString::fromUtf8(":/wurfel/grafiken/wurfel/rot.svg")));break;
-    case blau:this->setPixmap(QPixmap(QString::fromUtf8(":/wurfel/grafiken/wurfel/blau.svg")));break;
-    case nichtBelegt:this->setPixmap(QPixmap(QString::fromUtf8(":/wurfel/grafiken/wurfel/wurfel.svg")));break;
-    }
-}
-
-void Wurfel::mousePressEvent(QMouseEvent *ev)
-{
-    ev=ev;
-    if (darfWurfeln)
-    {
-        darfWurfeln=false;
-       /* emit wurfelPressed(wurfeln());
-        augen_alt=augen;
- //       emit setzeAugen(augen_alt);
-//        emit habeGewurfelt(augen_alt);
-        delay(200);
-        emit wurfelPressed(wurfeln());
-        delay(200);
-        emit wurfelPressed(wurfeln());
-        delay(300);
-        emit wurfelPressed(wurfeln());
-        delay(300);
-        emit wurfelPressed(wurfeln());
-        delay(300);
-        emit wurfelPressed(wurfeln());
-        delay(500);*/
-        emit wurfelPressed(wurfeln());
-        /*delay(1000);
-        emit wurfelPressed(augen_alt);
-        setzeBild(augen_alt);
-        augen=augen_alt;*/
-       // delay(1000);
-        emit zugPhase(augen);
-    }
+    alteAugen=vorlaeufigeAugen;
+    while(vorlaeufigeAugen==alteAugen)
+       vorlaeufigeAugen=((rand()%6)+1) ;
+    setzeBild(vorlaeufigeAugen);
+    return (vorlaeufigeAugen);
 }
 
 void Wurfel::sechs()
@@ -151,21 +112,98 @@ void Wurfel::sechs()
     }
 }
 
+void Wurfel::mousePressEvent(QMouseEvent *ev)
+{   /*Verhindert eine unschöne Warnung beim kompilieren. Es wird bemängelt,
+      dass ev nicht genutzt wird. Aber ohne ev funktioniert das QMouseEvent nicht.*/
+    ev=ev;
+    if (darfWurfeln)
+    {
+        darfWurfeln=false;
+        emit wurfelPressed(wurfeln(),0);
+        augen=vorlaeufigeAugen;
+        emit habeGewurfelt(augen);
+        delay(150);
+        emit wurfelPressed(wurfeln(),1);
+        delay(150);
+        emit wurfelPressed(wurfeln(),2);
+        delay(150);
+        emit wurfelPressed(wurfeln(),3);
+        delay(150);
+        emit wurfelPressed(wurfeln(),4);
+        delay(150);
+        emit wurfelPressed(wurfeln(),3);
+        delay(250);
+        emit wurfelPressed(wurfeln(),2);
+        delay(350);
+        emit wurfelPressed(augen,1);
+        setzeBild(augen);
+        emit zugPhase(augen);
+    }
+}
+
+/**
+ * Setzt die Würfelfarbe auf die Spielerfarbe.
+ * @param farbe
+ * Das ist die übermittelte Spielerfarbe
+ */
+void Wurfel::setzeFarbe(Zustand farbe)
+{
+    spielerFarbe=farbe;
+    switch(farbe)
+    {
+    case gelb:this->setPixmap(QPixmap(QString::fromUtf8(":/wurfel/grafiken/wurfel/gelb.svg"))); break;
+    case grun:this->setPixmap(QPixmap(QString::fromUtf8(":/wurfel/grafiken/wurfel/grun.svg")));break;
+    case rot:this->setPixmap(QPixmap(QString::fromUtf8(":/wurfel/grafiken/wurfel/rot.svg")));break;
+    case blau:this->setPixmap(QPixmap(QString::fromUtf8(":/wurfel/grafiken/wurfel/blau.svg")));break;
+    case nichtBelegt:this->setPixmap(QPixmap(QString::fromUtf8(":/wurfel/grafiken/wurfel/wurfel.svg")));break;
+    }
+}
+
+/**
+ * Lässt die Würfelanimation mit vorgegebenen Endergebniss durchlaufen. Wird für eine Netzwerk-Partie benötigt.
+ * Bildet das Gegenstück zu habeGewurfelt(int).
+ * @param n
+ * Das vorgegebene Endergebniss des Würfelvorgangs
+ */
 void Wurfel::hatGewurfelt(int n)
 {
-    emit wurfelPressed(wurfeln());
+    emit wurfelPressed(wurfeln(),0);
     delay(200);
-    emit wurfelPressed(wurfeln());
+    emit wurfelPressed(wurfeln(),1);
     delay(200);
-    emit wurfelPressed(wurfeln());
+    emit wurfelPressed(wurfeln(),2);
     delay(300);
-    emit wurfelPressed(wurfeln());
+    emit wurfelPressed(wurfeln(),3);
     delay(300);
-    emit wurfelPressed(wurfeln());
+    emit wurfelPressed(wurfeln(),4);
     delay(300);
-    emit wurfelPressed(wurfeln());
+    emit wurfelPressed(wurfeln(),3);
     delay(500);
-    emit wurfelPressed(wurfeln());
+    emit wurfelPressed(wurfeln(),2);
     delay(1000);
-    emit wurfelPressed(n);
+    emit wurfelPressed(n,1);
+}
+
+void Wurfel::wurfelKI()
+{
+    emit wurfelPressed(wurfeln(),0);
+    augen=vorlaeufigeAugen;
+    emit habeGewurfelt(augen);
+    delay(150);
+    emit wurfelPressed(wurfeln(),1);
+    delay(150);
+    emit wurfelPressed(wurfeln(),2);
+    delay(150);
+    emit wurfelPressed(wurfeln(),3);
+    delay(150);
+    emit wurfelPressed(wurfeln(),4);
+    delay(150);
+    emit wurfelPressed(wurfeln(),3);
+    delay(250);
+    emit wurfelPressed(wurfeln(),2);
+    delay(350);
+    emit wurfelPressed(augen,1);
+    setzeBild(augen);
+    delay(2000);
+    emit zugPhaseKI();
 }

@@ -26,7 +26,9 @@ SOURCES += main.cpp \
     timeout.cpp \
     Client.cpp \
     figurBewegen.cpp \
-    spielInit.cpp
+    spielInit.cpp \
+    figurBewegenKI.cpp \
+    lobby.cpp
 HEADERS += mainwindow.h \
     dialog.h \
     erstellen.h \
@@ -43,10 +45,12 @@ HEADERS += mainwindow.h \
     startfeld.h \
     spiel.h \
     spieler.h \
-    timeout.h
+    timeout.h \
+    lobby.h
 FORMS += mainwindow.ui \
     dialog.ui \
-    erstellen.ui
+    erstellen.ui \
+    lobby.ui
 RESOURCES += ressourcen/icons.qrc \
     ressourcen/felder.qrc \
     ressourcen/figuren.qrc \

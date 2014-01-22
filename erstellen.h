@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include <QStringList>
+#include <lobby.h>
 
 #include "Netzwerkverbindung.h"
 
@@ -20,6 +21,8 @@ private:
     bool lokalesSpiel=false;
     int anzSpieler=2;
     int spielfiguren=1;
+    Lobby *l;
+    QString benutzername;
 
     QStringList figuren;
     QStringList spieler;
@@ -29,8 +32,10 @@ private slots:
     void setlokalesSpiel(int);
     void setanzSpieler(int);
     void setspielfiguren(int);
+    void setBenutzername(QString);
     void abbrechen();
     void bestaetigen();
+    void setanzSpielerNW(int);
 
 public:
     explicit Erstellen(QWidget *parent = 0);
@@ -41,7 +46,8 @@ public:
     bool getlokalesSPiel(){return lokalesSpiel;}
 
 signals:
-    void spielparameter(int,int,int,bool);
+    void spielparameter(int,int,int,bool,QString);
+    //void spielparameterNW(int,int,int);
     void serverGestartet(Netzwerkverbindung *verbindung);
 };
 

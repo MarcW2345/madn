@@ -5,7 +5,10 @@ Spielfeld::Spielfeld(QWidget *parent) :
 {
 }
 
-
+/**
+ * @param _zustaende
+ * Der Zustand mit dem das Feld zu ueberspringen.
+ */
 void Spielfeld::feldUeberspringen(Zustand _zustaende){
     alterZustand=zustaende;
     zustaende=_zustaende;
