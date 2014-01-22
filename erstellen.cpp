@@ -26,6 +26,8 @@ Erstellen::Erstellen(QWidget *parent) :
                 this, SLOT(abbrechen()));
     connect(ui->btnBestatigen, SIGNAL(clicked()),
             this, SLOT(bestaetigen()));
+    connect(ui->leBenutzername, SIGNAL(textEdited(QString)),
+            this, SLOT(setBenutzername(QString)));
 }
 
 void Erstellen::settimer(int n){
@@ -49,6 +51,11 @@ void Erstellen::setspielfiguren(int n)
     spielfiguren=n+1;
 }
 
+void Erstellen::setBenutzername(QString bn)
+{
+    benutzername=bn;
+}
+
 void Erstellen::abbrechen(){
     timer=60;
     lokalesSpiel=false;
@@ -60,15 +67,29 @@ void Erstellen::abbrechen(){
 
 void Erstellen::bestaetigen()
 {
-    emit spielparameter(timer,anzSpieler,spielfiguren,lokalesSpiel);
     if (!lokalesSpiel) {
         Server *server = new Server(this->parent());
         emit serverGestartet(server);
+        this->l = new Lobby(this);
+        l->show();
+        connect(l, SIGNAL(spielerzahl(int)),
+                this, SLOT(setanzSpielerNW(int)));
     }
+    else{
+        emit spielparameter(timer,anzSpieler,spielfiguren,true,benutzername);
+        this->close();
+    }
+}
+
+void Erstellen::setanzSpielerNW(int n)
+{
+    anzSpieler=n;
+    emit spielparameter(timer,anzSpieler,spielfiguren,false,benutzername);
     this->close();
 }
 
 Erstellen::~Erstellen()
 {
+    delete l;
     delete ui;
 }

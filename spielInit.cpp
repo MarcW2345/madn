@@ -14,8 +14,6 @@ void MainWindow::spielInit(int anzSpieler,bool n)
     if (!lokal && n)
     {
         lokal=true;
-        for(int i=0;i<4;i++)
-            user[i]->initSpieler(i);
         for (int i=0;i<4;i++)
             connect (user[i], SIGNAL(spielerFertig()),madn, SLOT(naechster()));
         connect (madn, SIGNAL(spiele(Zustand)), this, SLOT(spiele(Zustand)));

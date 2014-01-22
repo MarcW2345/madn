@@ -51,22 +51,32 @@ void MainWindow::spielfelderInit()
     spielfeld[40]->setNext(1);
     for(int i=1;i<40;i++)
        spielfeld[i]->setZustand(nichtBelegt);
+    for(int i=1;i<40;i++)
+       spielfeld[i]->setalterZustand(nichtBelegt);
     for(int i=1;i<=40;i++)
        spielfeld[i]->setfeldNr(i);
 // Belegung Farbe und next Feldeintrag bei den Zielfeldern für Verzweigungsfelder
     ui->verzweigungsfeldgrun->setFarbe(grun);
-    ui->verzweigungsfeldgrun->setnextZielposition(4);
+    ui->verzweigungsfeldgrun->setnextZielposition(5);
     ui->verzweigungsfeldrot->setFarbe(rot);
-    ui->verzweigungsfeldrot->setnextZielposition(8);
+    ui->verzweigungsfeldrot->setnextZielposition(9);
     ui->verzweigungsfeldblau->setFarbe(blau);
-    ui->verzweigungsfeldblau->setnextZielposition(12);
+    ui->verzweigungsfeldblau->setnextZielposition(13);
     ui->verzweigungsfeldgelb->setFarbe(gelb);
-    ui->verzweigungsfeldgelb->setnextZielposition(0);
-
-
+    ui->verzweigungsfeldgelb->setnextZielposition(1);
 }
+/**
+ * @param anzahl
+ * Spieleranzahl
+ * @param figurArt
+ * Figurart, die beim Erstellen des Spiels gewaehlt wird ( Normal, Schneemann, Smiley).
+ */
 void MainWindow::figurenInit(int anzahl,int figurArt)
 {
+    ui->animationGelb2->setPixmap(QPixmap(QString::fromUtf8("")));
+    ui->animationRot2->setPixmap(QPixmap(QString::fromUtf8("")));
+    ui->animationBlau2->setPixmap(QPixmap(QString::fromUtf8("")));
+    ui->animationGrun2->setPixmap(QPixmap(QString::fromUtf8("")));
     for(int i=1;i<=40;i++)
     {
         spielfeld[i]->freistellen();
@@ -77,9 +87,9 @@ void MainWindow::figurenInit(int anzahl,int figurArt)
         startfelder[i]->freistellen();
         startfelder[i]->setFigurArt(figurArt);
     }
-    for(int i=0;i<16;i++)
+    for(int i=1;i<17;i++)
     {
-        //zielfelder[i]->freistellen();
+        zielfelder[i]->setZustand(nichtBelegt);
         zielfelder[i]->setFigurArt(figurArt);
     }
     if(anzahl>=1)
@@ -99,37 +109,37 @@ void MainWindow::figurenInit(int anzahl,int figurArt)
 
 void MainWindow::zielfelderInit()
 {
-    zielfelder[0]=ui->zielfeldgelb1;
-    zielfelder[1]=ui->zielfeldgelb2;
-    zielfelder[2]=ui->zielfeldgelb3;
-    zielfelder[3]=ui->zielfeldgelb4;
-    zielfelder[4]=ui->zielfeldgrun1;
-    zielfelder[5]=ui->zielfeldgrun2;
-    zielfelder[6]=ui->zielfeldgrun3;
-    zielfelder[7]=ui->zielfeldgrun4;
-    zielfelder[8]=ui->zielfeldrot1;
-    zielfelder[9]=ui->zielfeldrot2;
-    zielfelder[10]=ui->zielfeldrot3;
-    zielfelder[11]=ui->zielfeldrot4;
-    zielfelder[12]=ui->zielfeldblau1;
-    zielfelder[13]=ui->zielfeldblau2;
-    zielfelder[14]=ui->zielfeldblau3;
-    zielfelder[15]=ui->zielfeldblau4;
+    zielfelder[1]=ui->zielfeldgelb1;
+    zielfelder[2]=ui->zielfeldgelb2;
+    zielfelder[3]=ui->zielfeldgelb3;
+    zielfelder[4]=ui->zielfeldgelb4;
+    zielfelder[5]=ui->zielfeldgrun1;
+    zielfelder[6]=ui->zielfeldgrun2;
+    zielfelder[7]=ui->zielfeldgrun3;
+    zielfelder[8]=ui->zielfeldgrun4;
+    zielfelder[9]=ui->zielfeldrot1;
+    zielfelder[10]=ui->zielfeldrot2;
+    zielfelder[11]=ui->zielfeldrot3;
+    zielfelder[12]=ui->zielfeldrot4;
+    zielfelder[13]=ui->zielfeldblau1;
+    zielfelder[14]=ui->zielfeldblau2;
+    zielfelder[15]=ui->zielfeldblau3;
+    zielfelder[16]=ui->zielfeldblau4;
 
-    for(int i=0;i<3;i++)
+    for(int i=1;i<5;i++)
         zielfelder[i]->setNext(i+1);
-    for(int i=4;i<7;i++)
+    for(int i=5;i<9;i++)
         zielfelder[i]->setNext(i+1);
-    for(int i=8;i<11;i++)
+    for(int i=9;i<13;i++)
         zielfelder[i]->setNext(i+1);
-    for(int i=12;i<15;i++)
+    for(int i=13;i<17;i++)
         zielfelder[i]->setNext(i+1);
     // Die letzten 4 Zielfelder aller Farben zeigen auf NULL -> ENDE , leider hier nur '0'
-    zielfelder[3]->setNext(0);
-    zielfelder[7]->setNext(0);
-    zielfelder[11]->setNext(0);
-    zielfelder[15]->setNext(0);
-    for(int i=0;i<16;i++){
+    zielfelder[4]->setNext(0);
+    zielfelder[8]->setNext(0);
+    zielfelder[12]->setNext(0);
+    zielfelder[16]->setNext(0);
+    for(int i=1;i<17;i++){
         zielfelder[i]->setfeldNr(i);
         zielfelder[i]->setZustand(nichtBelegt);
     }
@@ -172,16 +182,7 @@ void MainWindow::startfelderInit(){
         startfelder[i]->setNext(31);
     }
 }
-//Funktion zum
-void MainWindow::delayAnimation(int n)
-{
-    QTime dieTime= QTime::currentTime().addMSecs(n);
-    while( QTime::currentTime() < dieTime )
-    QCoreApplication::processEvents(QEventLoop::AllEvents, 100);
-}
-
-void MainWindow::wuerfelAnimation()
-{
+void MainWindow::wuerfelInit(){
     animationGelb[0]=ui->animationGelb1;
     animationGelb[1]=ui->animationGelb2;
     animationGelb[2]=ui->animationGelb3;
@@ -196,57 +197,54 @@ void MainWindow::wuerfelAnimation()
     animationRot[1]=ui->animationRot2;
     animationRot[2]=ui->animationRot3;
     animationRot[3]=ui->animationRot4;
-    animationRot[4]=ui->animationRot1;
+    animationRot[4]=ui->animationRot5;
     animationBlau[0]=ui->animationBlau1;
     animationBlau[1]=ui->animationBlau2;
     animationBlau[2]=ui->animationBlau3;
     animationBlau[3]=ui->animationBlau4;
-    animationBlau[4]=ui->animationBlau1;
+    animationBlau[4]=ui->animationBlau5;
+}
+/**
+ * @param i
+ * Fuer die Animationsreihenfolge ein Index.
+ * @param augen
+ * Aktuelle Augensumme, damit richtiges Bild gesetzt wird.
+ */
+void MainWindow::wuerfelAnimation(int i,int augen)
+{
+
     if(madn->getAnDerReihe()==gelb){
-        ui->animationGelb5->setPixmap(QPixmap(QString::fromUtf8("")));
-        for(int i=0;i<4;i++)
-        {
-           int zufall=((rand()%6)+1);
-           setzeBild(zufall,i);
-           animationGelb[i]->setPixmap(QPixmap(QString::fromUtf8("")));
-        }
-        setzeBild(ui->hauptwurfel->getAugen(), 4);
+           for(int i=0;i<=4;i++)
+               animationGelb[i]->setPixmap(QPixmap(QString::fromUtf8("")));
+           setzeBild(augen,i);
     }
     else if(madn->getAnDerReihe()==grun){
-        ui->animationGrun5->setPixmap(QPixmap(QString::fromUtf8("")));
-        for(int i=0;i<4;i++)
-        {
-           int zufall=((rand()%6)+1);
-           setzeBild(zufall,i);
-           animationGrun[i]->setPixmap(QPixmap(QString::fromUtf8("")));
+        for(int i=0;i<=4;i++)
+            animationGrun[i]->setPixmap(QPixmap(QString::fromUtf8("")));
+        setzeBild(augen,i);
+
         }
-        setzeBild(ui->hauptwurfel->getAugen(), 4);
-    }
     else if(madn->getAnDerReihe()==rot){
-        ui->animationRot5->setPixmap(QPixmap(QString::fromUtf8("")));
-        for(int i=0;i<4;i++)
-        {
-           int zufall=((rand()%6)+1) ;
-           setzeBild(zufall,i);
-           animationRot[i]->setPixmap(QPixmap(QString::fromUtf8("")));
+        for(int i=0;i<=4;i++)
+            animationRot[i]->setPixmap(QPixmap(QString::fromUtf8("")));
+           setzeBild(augen,i);
         }
-        setzeBild(ui->hauptwurfel->getAugen(), 4);
-    }
     else if(madn->getAnDerReihe()==blau){
-        ui->animationBlau5->setPixmap(QPixmap(QString::fromUtf8("")));
-        for(int i=0;i<4;i++)
-        {
-           int zufall=((rand()%6)+1) ;
-           setzeBild(zufall,i);
-           animationBlau[i]->setPixmap(QPixmap(QString::fromUtf8("")));
-        }
-        setzeBild(ui->hauptwurfel->getAugen(), 4);
+        for(int i=0;i<=4;i++)
+            animationBlau[i]->setPixmap(QPixmap(QString::fromUtf8("")));
+           setzeBild(augen,i);
     }
 }
 
-void MainWindow::setzeBild(int p,int i)
+/**
+ * @param augen
+ * Fuer die Animationsreihenfolge ein Index.
+ * @param i
+ * Fuer die Animationsreihenfolge ein Index.
+ */
+void MainWindow::setzeBild(int augen,int i)
 {
-    switch(p)
+    switch(augen)
     {
     case 1: switch(madn->getAnDerReihe())
         {
@@ -303,6 +301,5 @@ void MainWindow::setzeBild(int p,int i)
         }
         break;
     }
-    delayAnimation(200);
 }
 

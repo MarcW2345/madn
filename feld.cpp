@@ -7,31 +7,42 @@
 {
 }
 
-// Dies passiert nach einem Mausklick
+ /**
+ * Behandelt Mausklicks auf ein Feld.
+ * @param ev
+ * Mausklickevent wird uebergeben.
+ */
 void Feld::mousePressEvent(QMouseEvent *ev)
 {
     ev=ev;
+    /// Nur dann, wenn das Feld belegt ist, soll auch wirklich ein Mausklick beachtet werden.
     if(zustaende!=nichtBelegt)
         emit mousePressed(next,feldNr,zustaende);
 }
 
-
-// Stellt dieses Feld frei von einer Figur nach einem Spielzug
  void Feld::freistellen(){
      QPixmap p;
      setPixmap(p);
+     // Zustand wird auf alterZustand gesetzt, fuer die Funktion feldUeberspringen(),
+     // denn, wenn eine Figur auf dem Weg zu einem anderen Feld, dieses Feld kurzfristig
+     // belegt, soll der alte Zustand aufgerufen werden koennen ( sei es, blau, rot,grun, gelb oder
+     // nicht belegt).
      setZustand(alterZustand);
  }
 
-// Belegt ein Feld mit einer bestimmten Figur
+ /**
+  * @param _zustaende
+  * Der Zustand der ein Feld belegt.
+  */
  void Feld::feldBelegen(Zustand _zustaende){
+    // hier wird garantiert, dass der alteZustand nichtBelegt ist
+    // wichtig fuer das Freistellen des Feldes
     alterZustand=nichtBelegt;
     zustaende=_zustaende;
     setFigur();
     delayBelegen(200);
  }
 
- // Wird ausschließlich von FeldBelegen aufgerufen und setzt die Grafik der Figur um
   void Feld::setFigur(){
 
       QPixmap figur;
@@ -83,10 +94,8 @@ void Feld::mousePressEvent(QMouseEvent *ev)
       else{
           QPixmap figur("");
       setPixmap(figur);}
-
-
-
  }
+
 
   void Feld::blinken(){
       QPixmap figur("");
@@ -104,11 +113,10 @@ void Feld::mousePressEvent(QMouseEvent *ev)
       }
   }
 
-// für die Initialisierung wichtig, aber im Nachhinein nicht mehr zu verwenden!!!!
- void Feld::setNext(int _next){
-      next=_next;
- }
-
+  /**
+  * @param n
+  * Die Anzahl der Millisekunden, die das Belegen verzoegert.
+  */
  void Feld::delayBelegen(int n)
  {
      QTime dieTime= QTime::currentTime().addMSecs(n);
